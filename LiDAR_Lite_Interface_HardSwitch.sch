@@ -921,45 +921,20 @@ Ref &lt;a href = https://support.epson.biz/td/api/doc_check.php?dl=brief_TSX-322
 <wire x1="0.381" y1="-0.508" x2="0.381" y2="0.508" width="0.127" layer="21"/>
 <wire x1="-0.254" y1="0.508" x2="-0.254" y2="-0.508" width="0.127" layer="21"/>
 </package>
-<package name="RSE_R-PUQFN-N10">
-<description>RSE (R-PUQFN-N10) &lt;br&gt;
-Ref &lt;a href = http://www.ti.com/lit/ds/symlink/ts5a23157.pdf&gt;Datasheet&lt;/a&gt;</description>
-<smd name="4" x="0.75" y="-0.635" dx="0.3" dy="0.58" layer="1"/>
-<smd name="6" x="0.75" y="0.635" dx="0.3" dy="0.58" layer="1"/>
-<smd name="9" x="-0.75" y="0.635" dx="0.3" dy="0.58" layer="1"/>
-<smd name="1" x="-0.75" y="-0.635" dx="0.3" dy="0.58" layer="1"/>
-<smd name="2" x="-0.25" y="-0.635" dx="0.25" dy="0.58" layer="1"/>
-<smd name="3" x="0.25" y="-0.635" dx="0.25" dy="0.58" layer="1"/>
-<smd name="8" x="-0.25" y="0.635" dx="0.25" dy="0.58" layer="1"/>
-<smd name="7" x="0.25" y="0.635" dx="0.25" dy="0.58" layer="1"/>
-<smd name="10" x="-0.86" y="0" dx="0.35" dy="0.63" layer="1" rot="R90"/>
-<smd name="5" x="0.86" y="0" dx="0.35" dy="0.63" layer="1" rot="R90"/>
-<wire x1="-1" y1="0.75" x2="-1" y2="-0.75" width="0.127" layer="21"/>
-<wire x1="-1" y1="-0.75" x2="1" y2="-0.75" width="0.127" layer="21"/>
-<wire x1="1" y1="-0.75" x2="1" y2="0.75" width="0.127" layer="21"/>
-<wire x1="1" y1="0.75" x2="-1" y2="0.75" width="0.127" layer="21"/>
-<circle x="-1.27" y="-1.016" radius="0.127" width="0.127" layer="21"/>
-<text x="0" y="1.524" size="0.6096" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
-</package>
-<package name="DGS0010A">
-<description>DGS0010A (VSSOP-10) &lt;br&gt;
-Ref &lt;a href = http://www.ti.com/lit/ds/symlink/ts5a23157.pdf&gt;Datasheet&lt;/a&gt;</description>
-<smd name="1" x="-2.2" y="1" dx="1.45" dy="0.3" layer="1"/>
-<smd name="2" x="-2.2" y="0.5" dx="1.45" dy="0.3" layer="1"/>
-<smd name="3" x="-2.2" y="0" dx="1.45" dy="0.3" layer="1"/>
-<smd name="4" x="-2.2" y="-0.5" dx="1.45" dy="0.3" layer="1"/>
-<smd name="5" x="-2.2" y="-1" dx="1.45" dy="0.3" layer="1"/>
-<smd name="6" x="2.2" y="-1" dx="1.45" dy="0.3" layer="1" rot="R180"/>
-<smd name="7" x="2.2" y="-0.5" dx="1.45" dy="0.3" layer="1" rot="R180"/>
-<smd name="8" x="2.2" y="0" dx="1.45" dy="0.3" layer="1" rot="R180"/>
-<smd name="9" x="2.2" y="0.5" dx="1.45" dy="0.3" layer="1" rot="R180"/>
-<smd name="10" x="2.2" y="1" dx="1.45" dy="0.3" layer="1" rot="R180"/>
-<wire x1="-1.5" y1="1.5" x2="-1.5" y2="-1.5" width="0.127" layer="21"/>
-<wire x1="-1.5" y1="-1.5" x2="1.5" y2="-1.5" width="0.127" layer="21"/>
-<wire x1="1.5" y1="-1.5" x2="1.5" y2="1.5" width="0.127" layer="21"/>
-<wire x1="1.5" y1="1.5" x2="-1.5" y2="1.5" width="0.127" layer="21"/>
-<circle x="-1.778" y="1.778" radius="0.127" width="0.127" layer="21"/>
-<text x="0" y="-2.159" size="0.6096" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
+<package name="JS202011SCQN">
+<description>JS202011SCQN, Gull Wing 6 pin&lt;br&gt;
+Ref &lt;a href = https://www.ckswitches.com/media/1422/js.pdf&gt;datasheet&lt;a&gt;</description>
+<smd name="1" x="-2.5" y="-2.75" dx="1.2" dy="2.515" layer="1"/>
+<smd name="2" x="0" y="-2.75" dx="1.2" dy="2.515" layer="1"/>
+<smd name="3" x="2.5" y="-2.75" dx="1.2" dy="2.515" layer="1"/>
+<smd name="4" x="2.5" y="2.75" dx="1.2" dy="2.515" layer="1" rot="R180"/>
+<smd name="5" x="0" y="2.75" dx="1.2" dy="2.515" layer="1" rot="R180"/>
+<smd name="6" x="-2.5" y="2.75" dx="1.2" dy="2.515" layer="1" rot="R180"/>
+<wire x1="-4.5" y1="1.8" x2="-4.5" y2="-1.8" width="0.127" layer="21"/>
+<wire x1="-4.5" y1="-1.8" x2="4.5" y2="-1.8" width="0.127" layer="21"/>
+<wire x1="4.5" y1="-1.8" x2="4.5" y2="1.8" width="0.127" layer="21"/>
+<wire x1="4.5" y1="1.8" x2="-4.5" y2="1.8" width="0.127" layer="21"/>
+<text x="-5.334" y="0" size="1.27" layer="25" font="vector" ratio="15" rot="R90" align="center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -1183,24 +1158,28 @@ Switches electrical signals</description>
 <wire x1="-1.524" y1="2.54" x2="1.524" y2="2.54" width="0.254" layer="94"/>
 <text x="2.54" y="1.016" size="0.8128" layer="95" font="vector" ratio="15" rot="R90" align="center">&gt;NAME</text>
 </symbol>
-<symbol name="NS5A4684S">
-<description>2 x 2:1 analog mux</description>
-<pin name="VCC" x="-12.7" y="10.16" length="middle" direction="pwr"/>
-<pin name="GND" x="-12.7" y="7.62" length="middle" direction="pwr"/>
-<pin name="IN1" x="-12.7" y="2.54" length="middle" direction="in"/>
-<pin name="NC1" x="-12.7" y="0" length="middle"/>
-<pin name="IN2" x="-12.7" y="-7.62" length="middle" direction="in"/>
-<pin name="NC2" x="-12.7" y="-10.16" length="middle"/>
-<pin name="COM2" x="12.7" y="-7.62" length="middle" rot="R180"/>
-<pin name="COM1" x="12.7" y="2.54" length="middle" rot="R180"/>
-<pin name="NO2" x="-12.7" y="-12.7" length="middle"/>
-<pin name="NO1" x="-12.7" y="-2.54" length="middle"/>
-<wire x1="-7.62" y1="12.7" x2="-7.62" y2="-15.24" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-15.24" x2="7.62" y2="-15.24" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-15.24" x2="7.62" y2="12.7" width="0.254" layer="94"/>
-<wire x1="7.62" y1="12.7" x2="-7.62" y2="12.7" width="0.254" layer="94"/>
-<text x="0" y="14.478" size="1.778" layer="95" ratio="15" align="center">&gt;DISP</text>
-<text x="0" y="-17.272" size="1.778" layer="95" ratio="15" align="center">&gt;NAME</text>
+<symbol name="SW_DPDT_POL">
+<description>&lt;h3&gt;DPDT Switch&lt;/h3&gt;</description>
+<wire x1="-2.54" y1="-2.54" x2="0" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="0" y1="-5.08" x2="0.635" y2="-5.08" width="0.127" layer="94"/>
+<wire x1="0" y1="0" x2="0.635" y2="0" width="0.1524" layer="94"/>
+<circle x="0" y="0" radius="0.3592" width="0.2032" layer="94"/>
+<circle x="0" y="-5.08" radius="0.3592" width="0.2032" layer="94"/>
+<circle x="-2.54" y="-2.54" radius="0.3592" width="0.2032" layer="94"/>
+<text x="-1.27" y="-6.35" size="1.778" layer="96" font="vector" align="top-center">&gt;VALUE</text>
+<pin name="P2" x="-5.08" y="-2.54" visible="off" length="short" direction="pas"/>
+<pin name="S2" x="2.54" y="-5.08" visible="off" length="short" direction="pas" rot="R180"/>
+<pin name="O2" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<wire x1="-2.54" y1="5.08" x2="0" y2="6.35" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.54" x2="0.635" y2="2.54" width="0.127" layer="94"/>
+<wire x1="0" y1="7.62" x2="0.635" y2="7.62" width="0.1524" layer="94"/>
+<circle x="0" y="7.62" radius="0.3592" width="0.2032" layer="94"/>
+<circle x="0" y="2.54" radius="0.3592" width="0.2032" layer="94"/>
+<circle x="-2.54" y="5.08" radius="0.3592" width="0.2032" layer="94"/>
+<text x="-1.27" y="8.382" size="1.778" layer="95" font="vector" align="bottom-center">&gt;NAME</text>
+<pin name="P1" x="-5.08" y="5.08" visible="off" length="short" direction="pas"/>
+<pin name="S1" x="2.54" y="2.54" visible="off" length="short" direction="pas" rot="R180"/>
+<pin name="O1" x="2.54" y="7.62" visible="off" length="short" direction="pas" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1948,69 +1927,26 @@ Standard 6 pin header for AVR programming</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TS5A23157" prefix="U">
-<description>&lt;b&gt;TS5A23157&lt;/b&gt; - 2 Channel Multiplexer DPDT Analog Switch
- 
-&lt;p&gt;Characteristics:
-&lt;ul&gt;
-&lt;li&gt;VCC: 1.65~5.5V&lt;/li&gt;
-&lt;li&gt;Operating Temperature: -40°C to 85°C&lt;/li&gt;
-&lt;li&gt;On state resistace: 10 &amp;Omega;, Typ &lt;/li&gt;
-&lt;li&gt;Channel to Channel Matching: 0.15 &amp;Omega;, Typical &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;
- 
-&lt;p&gt;
-Digikey: &lt;br&gt;&lt;a href = "https://www.digikey.com/product-detail/en/texas-instruments/TS5A23157RSER/296-21919-1-ND/1629272"&gt; 296-21919-1-ND (UQFN, RSE) &lt;a&gt;&lt;br/&gt;
-
-&lt;a href = "https://www.digikey.com/product-detail/en/texas-instruments/TS5A23157DGSR/296-17076-1-ND/659982"&gt; 296-17076-1-ND (VSSOP, DGS) &lt;/a&gt;&lt;br/&gt;
-
- &lt;/p&gt;</description>
+<deviceset name="SWITCH_DPDT" prefix="S">
+<description>&lt;h3&gt;Genric DPDT Switch&lt;/h3&gt;</description>
 <gates>
-<gate name="G$1" symbol="NS5A4684S" x="0" y="0"/>
+<gate name="G$1" symbol="SW_DPDT_POL" x="0" y="0"/>
 </gates>
 <devices>
-<device name="RSE" package="RSE_R-PUQFN-N10">
+<device name="JS_GULLWING" package="JS202011SCQN">
 <connects>
-<connect gate="G$1" pin="COM1" pad="10"/>
-<connect gate="G$1" pin="COM2" pad="6"/>
-<connect gate="G$1" pin="GND" pad="3"/>
-<connect gate="G$1" pin="IN1" pad="1"/>
-<connect gate="G$1" pin="IN2" pad="5"/>
-<connect gate="G$1" pin="NC1" pad="9"/>
-<connect gate="G$1" pin="NC2" pad="7"/>
-<connect gate="G$1" pin="NO1" pad="2"/>
-<connect gate="G$1" pin="NO2" pad="4"/>
-<connect gate="G$1" pin="VCC" pad="8"/>
+<connect gate="G$1" pin="O1" pad="1"/>
+<connect gate="G$1" pin="O2" pad="6"/>
+<connect gate="G$1" pin="P1" pad="2"/>
+<connect gate="G$1" pin="P2" pad="5"/>
+<connect gate="G$1" pin="S1" pad="3"/>
+<connect gate="G$1" pin="S2" pad="4"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DIGIKEY" value="296-21919-1-ND" constant="no"/>
-<attribute name="DISP" value="TS5A23157" constant="no"/>
-<attribute name="MF" value="TI" constant="no"/>
-<attribute name="MPN" value="TS5A23157RSER" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="DGS" package="DGS0010A">
-<connects>
-<connect gate="G$1" pin="COM1" pad="10"/>
-<connect gate="G$1" pin="COM2" pad="6"/>
-<connect gate="G$1" pin="GND" pad="3"/>
-<connect gate="G$1" pin="IN1" pad="1"/>
-<connect gate="G$1" pin="IN2" pad="5"/>
-<connect gate="G$1" pin="NC1" pad="9"/>
-<connect gate="G$1" pin="NC2" pad="7"/>
-<connect gate="G$1" pin="NO1" pad="2"/>
-<connect gate="G$1" pin="NO2" pad="4"/>
-<connect gate="G$1" pin="VCC" pad="8"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DIGIKEY" value="296-17076-1-ND" constant="no"/>
-<attribute name="DISP" value="TS5A23157" constant="no"/>
-<attribute name="MF" value="TI" constant="no"/>
-<attribute name="MPN" value="TS5A23157DGSR" constant="no"/>
+<attribute name="DIGIKEY" value="401-2002-1-ND" constant="no"/>
+<attribute name="MF" value="C&amp;K" constant="no"/>
+<attribute name="MPN" value="JS202011SCQN" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -14021,7 +13957,17 @@ Source: AVX .. aphvc.pdf</description>
 <part name="J2" library="bschulz" deviceset="CONN_4" device="2.54_SCREW"/>
 <part name="R1" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="4.7K" value="4.7k"/>
 <part name="R2" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="4.7K" value="4.7k"/>
-<part name="C1" library="bschulz_passives" deviceset="CPOL-EU" device="UW-10X10"/>
+<part name="C1" library="bschulz_passives" deviceset="CPOL-EU" device="UW-10X10">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="+" pinorder="1"/>
+<pinmap gate="G$1" pin="-" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY" value="493-2182-1-ND"/>
+<attribute name="MF" value="Nichicon"/>
+<attribute name="MPN" value="UWT1C681MNL1GS"/>
+</part>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="Q1" library="bschulz" deviceset="MOSFET-NCH" device="-2N7002P" value="2N7002"/>
 <part name="Q2" library="bschulz" deviceset="MOSFET-NCH" device="-2N7002P" value="2N7002"/>
@@ -14059,16 +14005,21 @@ Source: AVX .. aphvc.pdf</description>
 <part name="ISP1" library="bschulz" deviceset="AVRISP" device="-6"/>
 <part name="R9" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K" value="10k"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="D1" library="bschulz" deviceset="LED" device="0603" value="LED0603"/>
+<part name="D1" library="bschulz" deviceset="LED" device="0603" value="LED0603">
+<attribute name="DIGIKEY" value="732-4978-1-ND"/>
+<attribute name="MF" value="Wurth"/>
+<attribute name="MPN" value="150060RS75000"/>
+</part>
 <part name="R10" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="330"/>
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R11" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="1K" value="1k"/>
-<part name="U2" library="bschulz" deviceset="TS5A23157" device="DGS"/>
+<part name="S1" library="bschulz" deviceset="SWITCH_DPDT" device="JS_GULLWING"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="-22.86" y="7.62" size="1.778" layer="91">Software I2C!</text>
+<text x="5.08" y="71.12" size="1.778" layer="91" rot="R90">RED</text>
 </plain>
 <instances>
 <instance part="J1" gate="G$1" x="12.7" y="22.86" smashed="yes" rot="R180">
@@ -14090,6 +14041,9 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="C1" gate="G$1" x="25.4" y="38.1" smashed="yes">
 <attribute name="NAME" x="26.543" y="38.5826" size="1.778" layer="95"/>
 <attribute name="VALUE" x="26.543" y="33.5026" size="1.778" layer="96"/>
+<attribute name="MPN" x="25.4" y="38.1" size="1.778" layer="96" display="off"/>
+<attribute name="MF" x="25.4" y="38.1" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY" x="25.4" y="38.1" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND1" gate="1" x="25.4" y="27.94" smashed="yes">
 <attribute name="VALUE" x="22.86" y="25.4" size="1.778" layer="96"/>
@@ -14216,9 +14170,9 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="NAME" x="113.03" y="100.5586" size="1.778" layer="95"/>
 <attribute name="VALUE" x="113.03" y="95.758" size="1.778" layer="96"/>
 </instance>
-<instance part="U2" gate="G$1" x="152.4" y="81.28" smashed="yes">
-<attribute name="DISP" x="152.4" y="95.758" size="1.778" layer="95" ratio="15" align="center"/>
-<attribute name="NAME" x="152.4" y="64.008" size="1.778" layer="95" ratio="15" align="center"/>
+<instance part="S1" gate="G$1" x="147.32" y="76.2" smashed="yes" rot="R180">
+<attribute name="VALUE" x="148.59" y="82.55" size="1.778" layer="96" font="vector" rot="R180" align="top-center"/>
+<attribute name="NAME" x="148.59" y="67.818" size="1.778" layer="95" font="vector" rot="R180" align="bottom-center"/>
 </instance>
 </instances>
 <busses>
@@ -14284,11 +14238,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="GND20" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="GND"/>
-<wire x1="139.7" y1="88.9" x2="134.62" y2="88.9" width="0.1524" layer="91"/>
-<label x="134.62" y="88.9" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="C5" gate="G$1" pin="1"/>
 <pinref part="XTAL1" gate="G$1" pin="GND"/>
 <wire x1="93.98" y1="71.12" x2="93.98" y2="66.04" width="0.1524" layer="91"/>
@@ -14337,9 +14286,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="83.82" y="106.68" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="NC2"/>
-<wire x1="139.7" y1="71.12" x2="134.62" y2="71.12" width="0.1524" layer="91"/>
-<label x="134.62" y="71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="144.78" y1="73.66" x2="139.7" y2="73.66" width="0.1524" layer="91"/>
+<label x="139.7" y="73.66" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="S1" gate="G$1" pin="S1"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -14354,9 +14303,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="43.18" y="106.68" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="NC1"/>
-<wire x1="139.7" y1="81.28" x2="134.62" y2="81.28" width="0.1524" layer="91"/>
-<label x="134.62" y="81.28" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="144.78" y1="81.28" x2="139.7" y2="81.28" width="0.1524" layer="91"/>
+<label x="139.7" y="81.28" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="S1" gate="G$1" pin="S2"/>
 </segment>
 </net>
 <net name="EN" class="0">
@@ -14472,9 +14421,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="78.74" y="35.56" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="COM2"/>
-<wire x1="165.1" y1="73.66" x2="172.72" y2="73.66" width="0.1524" layer="91"/>
-<label x="172.72" y="73.66" size="1.778" layer="95" xref="yes"/>
+<wire x1="152.4" y1="78.74" x2="160.02" y2="78.74" width="0.1524" layer="91"/>
+<label x="160.02" y="78.74" size="1.778" layer="95" xref="yes"/>
+<pinref part="S1" gate="G$1" pin="P2"/>
 </segment>
 </net>
 <net name="SIG1" class="0">
@@ -14487,9 +14436,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="78.74" y="15.24" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="COM1"/>
-<wire x1="165.1" y1="83.82" x2="172.72" y2="83.82" width="0.1524" layer="91"/>
-<label x="172.72" y="83.82" size="1.778" layer="95" xref="yes"/>
+<wire x1="152.4" y1="71.12" x2="160.02" y2="71.12" width="0.1524" layer="91"/>
+<label x="160.02" y="71.12" size="1.778" layer="95" xref="yes"/>
+<pinref part="S1" gate="G$1" pin="P1"/>
 </segment>
 </net>
 <net name="SIG2_LV" class="0">
@@ -14558,11 +14507,6 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="96.52" y1="86.36" x2="99.06" y2="86.36" width="0.1524" layer="91"/>
 <label x="99.06" y="86.36" size="1.778" layer="95" xref="yes"/>
 </segment>
-<segment>
-<pinref part="U2" gate="G$1" pin="VCC"/>
-<wire x1="139.7" y1="91.44" x2="134.62" y2="91.44" width="0.1524" layer="91"/>
-<label x="134.62" y="91.44" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
 </net>
 <net name="N$7" class="0">
 <segment>
@@ -14588,9 +14532,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="157.48" y="15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U3" gate="G$1" pin="PA5"/>
-<wire x1="50.8" y1="78.74" x2="45.72" y2="78.74" width="0.1524" layer="91"/>
-<label x="45.72" y="78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="U3" gate="G$1" pin="PA6"/>
+<wire x1="50.8" y1="76.2" x2="45.72" y2="76.2" width="0.1524" layer="91"/>
+<label x="45.72" y="76.2" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -14676,23 +14620,6 @@ Source: AVX .. aphvc.pdf</description>
 <label x="83.82" y="78.74" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="OUTPUT_CTRL" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="IN2"/>
-<wire x1="139.7" y1="73.66" x2="134.62" y2="73.66" width="0.1524" layer="91"/>
-<label x="134.62" y="73.66" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U2" gate="G$1" pin="IN1"/>
-<wire x1="139.7" y1="83.82" x2="134.62" y2="83.82" width="0.1524" layer="91"/>
-<label x="134.62" y="83.82" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="PA6"/>
-<wire x1="50.8" y1="76.2" x2="45.72" y2="76.2" width="0.1524" layer="91"/>
-<label x="45.72" y="76.2" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="RX" class="0">
 <segment>
 <pinref part="U3" gate="G$1" pin="PA7"/>
@@ -14700,9 +14627,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="45.72" y="73.66" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="NO2"/>
-<wire x1="139.7" y1="68.58" x2="134.62" y2="68.58" width="0.1524" layer="91"/>
-<label x="134.62" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="144.78" y1="76.2" x2="139.7" y2="76.2" width="0.1524" layer="91"/>
+<label x="139.7" y="76.2" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="S1" gate="G$1" pin="O2"/>
 </segment>
 </net>
 <net name="TX" class="0">
@@ -14712,9 +14639,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="83.82" y="91.44" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="NO1"/>
-<wire x1="139.7" y1="78.74" x2="134.62" y2="78.74" width="0.1524" layer="91"/>
-<label x="134.62" y="78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="144.78" y1="68.58" x2="139.7" y2="68.58" width="0.1524" layer="91"/>
+<label x="139.7" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="S1" gate="G$1" pin="O1"/>
 </segment>
 </net>
 <net name="SDA_OB" class="0">
