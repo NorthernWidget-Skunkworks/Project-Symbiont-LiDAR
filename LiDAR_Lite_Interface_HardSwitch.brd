@@ -8,7 +8,7 @@
 </settings>
 <grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
@@ -23,14 +23,14 @@
 <layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
 <layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
 <layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
@@ -795,7 +795,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="18.034" y="43.18" size="0.6096" layer="27" font="vector" ratio="15" rot="R270" align="center"/>
 <attribute name="VALUE_PART" value="4.7k" x="19.05" y="43.18" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C1" library="bschulz_passives" package="UW-10X10_NICHICON" value="" x="18.288" y="9.144" smashed="yes" rot="R90">
+<element name="C1" library="bschulz_passives" package="UW-10X10_NICHICON" value="680uF" x="18.288" y="9.144" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="493-2182-1-ND" x="18.288" y="9.144" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="Nichicon" x="18.288" y="9.144" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="UWT1C681MNL1GS" x="18.288" y="9.144" size="1.778" layer="27" rot="R90" display="off"/>
@@ -815,7 +815,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="26.924" y="21.209" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="26.924" y="24.511" size="0.6096" layer="27" font="vector" ratio="20" rot="R180" align="top-center"/>
 </element>
-<element name="R3" library="bschulz_passives" package="R0603" value="" x="29.718" y="22.86" smashed="yes" rot="R270">
+<element name="R3" library="bschulz_passives" package="R0603" value="10k" x="29.718" y="22.86" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="29.718" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="Yageo" x="29.718" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="RC0603FR-0710KL" x="29.718" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
@@ -823,7 +823,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="28.702" y="22.86" size="0.6096" layer="27" font="vector" ratio="15" rot="R270" align="center"/>
 <attribute name="VALUE_PART" value="10k" x="29.718" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="R4" library="bschulz_passives" package="R0603" value="" x="29.718" y="26.543" smashed="yes" rot="R270">
+<element name="R4" library="bschulz_passives" package="R0603" value="10k" x="29.718" y="26.543" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="29.718" y="26.543" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="Yageo" x="29.718" y="26.543" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="RC0603FR-0710KL" x="29.718" y="26.543" size="1.778" layer="27" rot="R270" display="off"/>
@@ -831,7 +831,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="28.702" y="26.543" size="0.6096" layer="27" font="vector" ratio="15" rot="R270" align="center"/>
 <attribute name="VALUE_PART" value="10k" x="29.718" y="26.543" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="R5" library="bschulz_passives" package="R0603" value="" x="24.13" y="26.67" smashed="yes" rot="R270">
+<element name="R5" library="bschulz_passives" package="R0603" value="10k" x="24.13" y="26.67" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="24.13" y="26.67" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="Yageo" x="24.13" y="26.67" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="RC0603FR-0710KL" x="24.13" y="26.67" size="1.778" layer="27" rot="R270" display="off"/>
@@ -839,7 +839,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="23.114" y="26.67" size="0.6096" layer="27" font="vector" ratio="15" rot="R270" align="center"/>
 <attribute name="VALUE_PART" value="10k" x="24.13" y="26.67" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="R6" library="bschulz_passives" package="R0603" value="" x="24.13" y="22.86" smashed="yes" rot="R90">
+<element name="R6" library="bschulz_passives" package="R0603" value="10k" x="24.13" y="22.86" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="24.13" y="22.86" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="Yageo" x="24.13" y="22.86" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="RC0603FR-0710KL" x="24.13" y="22.86" size="1.778" layer="27" rot="R90" display="off"/>
@@ -909,14 +909,14 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="MPN" value="ABM8G-12.000MHZ-4Y-T3" x="21.59" y="50.673" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="21.59" y="53.086" size="0.6096" layer="25" font="vector" ratio="15" align="center"/>
 </element>
-<element name="C2" library="bschulz_passives" package="C0603" value="" x="18.288" y="51.816" smashed="yes">
+<element name="C2" library="bschulz_passives" package="C0603" value="10pF" x="18.288" y="51.816" smashed="yes">
 <attribute name="DIGIKEY" value="311-1058-1-ND" x="18.288" y="51.816" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="Yageo" x="18.288" y="51.816" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="CC0603JRNPO9BN100CC0603JRNPO9BN100" x="18.288" y="51.816" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="18.288" y="52.832" size="0.6096" layer="25" font="vector" ratio="15" align="center"/>
 <attribute name="VALUE" x="18.288" y="50.8" size="0.6096" layer="27" font="vector" ratio="15" align="center"/>
 </element>
-<element name="C5" library="bschulz_passives" package="C0603" value="" x="18.288" y="49.657" smashed="yes">
+<element name="C5" library="bschulz_passives" package="C0603" value="10pF" x="18.288" y="49.657" smashed="yes">
 <attribute name="DIGIKEY" value="311-1058-1-ND" x="18.288" y="49.657" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="Yageo" x="18.288" y="49.657" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="CC0603JRNPO9BN100CC0603JRNPO9BN100" x="18.288" y="49.657" size="1.778" layer="27" display="off"/>
@@ -951,7 +951,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="MPN" value="150060RS75000" x="45.466" y="25.4" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="45.466" y="21.971" size="0.6096" layer="21" font="vector" ratio="15" align="center"/>
 </element>
-<element name="R10" library="bschulz_passives" package="R0603" value="" x="45.466" y="24.765" smashed="yes" rot="R180">
+<element name="R10" library="bschulz_passives" package="R0603" value="330" x="45.466" y="24.765" smashed="yes" rot="R180">
 <attribute name="DIGIKEY" value="311-330HRCT-ND" x="45.466" y="28.575" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="Yageo" x="45.466" y="28.575" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="RC0603FR-07330RL" x="45.466" y="28.575" size="1.778" layer="27" rot="R180" display="off"/>
@@ -987,14 +987,14 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="MPN" value="LIS3DHTR" x="2.286" y="32.512" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="2.286" y="30.48" size="0.6096" layer="25" font="vector" ratio="15" rot="R180" align="center"/>
 </element>
-<element name="C7" library="bschulz_passives" package="C0805" value="0.1uF" x="5.715" y="32.258" smashed="yes" rot="R90">
+<element name="C7" library="bschulz_passives" package="C0805" value="10uF" x="5.715" y="32.258" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="490-6473-6-ND" x="5.715" y="32.258" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="Murata" x="5.715" y="32.258" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="GRM21BR61C106KE15K" x="5.715" y="32.258" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="6.35" y="34.671" size="0.6096" layer="25" font="vector" ratio="15" rot="R180" align="center"/>
 <attribute name="VALUE" x="7.112" y="32.258" size="0.6096" layer="27" font="vector" ratio="15" rot="R90" align="center"/>
 </element>
-<element name="C8" library="bschulz_passives" package="C0603" value="10uF" x="7.874" y="32.766" smashed="yes" rot="R90">
+<element name="C8" library="bschulz_passives" package="C0603" value="0.1uF" x="7.874" y="32.766" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="490-6051-1-ND" x="7.874" y="32.766" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="Murata" x="7.874" y="32.766" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="GCM188R71E104KA57D" x="7.874" y="32.766" size="1.778" layer="27" rot="R90" display="off"/>
