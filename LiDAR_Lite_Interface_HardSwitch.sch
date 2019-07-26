@@ -14366,7 +14366,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="J2" library="bschulz" deviceset="CONN_4" device="2.54_SCREW"/>
 <part name="R1" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="4.7K" value="4.7k"/>
 <part name="R2" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="4.7K" value="4.7k"/>
-<part name="C1" library="bschulz_passives" deviceset="CPOL-EU" device="UW-10X10">
+<part name="C1" library="bschulz_passives" deviceset="CPOL-EU" device="UW-10X10" value="680uF">
 <spice>
 <pinmapping spiceprefix="C">
 <pinmap gate="G$1" pin="+" pinorder="1"/>
@@ -14380,10 +14380,10 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="Q1" library="bschulz" deviceset="MOSFET-NCH" device="-2N7002P" value="2N7002"/>
 <part name="Q2" library="bschulz" deviceset="MOSFET-NCH" device="-2N7002P" value="2N7002"/>
-<part name="R3" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K"/>
-<part name="R4" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K"/>
-<part name="R5" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K"/>
-<part name="R6" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K"/>
+<part name="R3" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K" value="10k"/>
+<part name="R4" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K" value="10k"/>
+<part name="R5" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K" value="10k"/>
+<part name="R6" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="10K" value="10k"/>
 <part name="Q3" library="bschulz" deviceset="MOSFET-NCH" device="-DMG3404L" value="DMG3404"/>
 <part name="U1" library="bschulz" deviceset="TLV61220" device="DBV"/>
 <part name="L1" library="bschulz" deviceset="INDUCTOR" device="1008" value="6.8uH">
@@ -14405,8 +14405,8 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="MF" value="Abricon"/>
 <attribute name="MPN" value="ABM8G-12.000MHZ-4Y-T3"/>
 </part>
-<part name="C2" library="bschulz_passives" deviceset="C-EU" device="C0603" technology="10PF"/>
-<part name="C5" library="bschulz_passives" deviceset="C-EU" device="C0603" technology="10PF"/>
+<part name="C2" library="bschulz_passives" deviceset="C-EU" device="C0603" technology="10PF" value="10pF"/>
+<part name="C5" library="bschulz_passives" deviceset="C-EU" device="C0603" technology="10PF" value="10pF"/>
 <part name="U3" library="bschulz" deviceset="ATTINY1634" device="SOIC"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C6" library="bschulz_passives" deviceset="C-EU" device="C0603" technology="0.1UF" value="0.1uF"/>
@@ -14419,15 +14419,15 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="MF" value="Wurth"/>
 <attribute name="MPN" value="150060RS75000"/>
 </part>
-<part name="R10" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="330"/>
+<part name="R10" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="330" value="330"/>
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R11" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="1K" value="1k"/>
 <part name="S1" library="bschulz" deviceset="SWITCH_DPDT" device="JS_GULLWING"/>
 <part name="U2" library="bschulz" deviceset="TCS40DPR" device="SOT23"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U4" library="bschulz" deviceset="LIS3DH" device="LGA"/>
-<part name="C7" library="bschulz_passives" deviceset="C-EU" device="C0805" technology="10UF" value="0.1uF"/>
-<part name="C8" library="bschulz_passives" deviceset="C-EU" device="C0603" technology="0.1UF" value="10uF"/>
+<part name="C7" library="bschulz_passives" deviceset="C-EU" device="C0805" technology="10UF" value="10uF"/>
+<part name="C8" library="bschulz_passives" deviceset="C-EU" device="C0603" technology="0.1UF" value="0.1uF"/>
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U5" library="bschulz" deviceset="MIC5365" device="SC70" technology="3.3"/>
 <part name="C9" library="bschulz_passives" deviceset="C-EU" device="C0603" technology="1UF" value="1uF"/>
