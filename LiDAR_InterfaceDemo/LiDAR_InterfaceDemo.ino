@@ -17,6 +17,8 @@
 // #define ACCEL_ADR 0x18
 const int ACCEL_ADR = 0x18; //DEBUG!
 
+#define LIDAR_ADR 0x62
+
 #define READ 0x01
 #define WRITE 0x00
 
@@ -30,7 +32,7 @@ volatile uint8_t ADR = 0x40; //Use arbitraty address, change using generall call
 
 unsigned int Config = 0; //Global config value
 
-uint8_t Reg[26] = {0}; //Initialize registers
+uint8_t Reg[10] = {0}; //Initialize registers
 bool StartSample = true; //Flag used to start a new converstion, make a conversion on startup
 const unsigned int UpdateRate = 5; //Rate of update
 
@@ -58,8 +60,11 @@ void setup() {
 	pinMode(POWER_SW, OUTPUT);
 	digitalWrite(POWER_SW, LOW); //Turn on output power //FIX??
 	pinMode(7, INPUT); //DEBUG! 
+	pinMode(11, INPUT);
+	pinMode(13, INPUT);
   si.i2c_init(); //Begin I2C master
   InitAccel();
+  InitLiDAR();
 
 }
 
@@ -105,10 +110,14 @@ void loop() {
 	// while(((ReadByte(ACCEL_ADR, 0x27) & 0x08) >> 3) != 1 || (digitalRead(7) == LOW)); //Wait for updated values
 
 	// Serial.println("START"); //DEBUG!
+	// Serial.println(Stat1, BIN); //DEBUG!	
+	// Serial.println(Stat2, BIN); //DEBUG!
+	// Serial.print("\n\n"); //Newline return
+	Serial.print('R'); //Preceed range value
+	Serial.println(GetRange()); 
 	GetG();
-	Serial.println(Stat1, BIN); //DEBUG!	
-	Serial.println(Stat2, BIN); //DEBUG!
-	Serial.print("\n\n"); //Newline return
+	// Serial.println(ReadByte(LIDAR_ADR, 0x0E)); //DEBUG! //READ RSSI
+
 	// for(int i = 0; i < 3; i++) {
 	// 	Serial.println(GetG(i));
 	// }
@@ -158,6 +167,8 @@ float GetG()
 	// int16_t Data = ReadWord(ACCEL_ADR, AxisADR);
 	// return Data*(4.0/4096.0); //FIX! Make fixed integer! 
 	// Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions 
+	int16_t Axis[3] = {0}; //Initalize variables for x,y,z values
+
 	bool Error = SendCommand(ACCEL_ADR, OUT_X_ADR | 0x80);
 	si.i2c_stop(); 
 
@@ -168,10 +179,43 @@ float GetG()
 	}
 	si.i2c_stop();
 	for(int i = 0; i < 3; i++) {
-		Serial.println(((int16_t)(Data[2*i + 1] << 8) | (int16_t)Data[2*i]) >> 4);
+		Axis[i] = (((int16_t)(Data[2*i + 1] << 8) | (int16_t)Data[2*i]) >> 4);
 	}
+	Serial.print('X'); Serial.println(Axis[0]);
+	Serial.print('Y'); Serial.println(Axis[1]);
+	Serial.print('Z'); Serial.println(Axis[2]);
+
+	SplitAndLoad(0x04, Axis[0]);
+	SplitAndLoad(0x06, Axis[1]);
+	SplitAndLoad(0x08, Axis[2]);
+
 
 	// return Data;
+}
+
+uint8_t InitLiDAR() 
+{
+	WriteByte(LIDAR_ADR, 0x02, 0x80);
+	WriteByte(LIDAR_ADR, 0x04, 0x08);
+	WriteByte(LIDAR_ADR, 0x12, 0x05);
+	WriteByte(LIDAR_ADR, 0x1C, 0x00);
+}	
+
+float GetRange()
+{
+	WriteByte(LIDAR_ADR, 0x00, 0x01);
+	// si.i2c_start((LIDAR_ADR << 1) | WRITE);
+	// si.i2c_write(0x00); 
+	// si.i2c_stop();
+	// si.i2c_start((LIDAR_ADR << 1) | WRITE);
+	// si.i2c_write(0x01); //Command to take measurment WITH correction bias 
+	// si.i2c_stop();
+
+	while((ReadByte(LIDAR_ADR, 0x01) & 0x01) == 1);
+	int16_t Data = ReadWord_LE(LIDAR_ADR, 0x0F);
+	SplitAndLoad(0x02, Data);
+	return Data;
+
 }
 
 uint8_t SendCommand(uint8_t Adr, uint8_t Command)
@@ -261,7 +305,7 @@ int ReadByte(uint8_t Adr, uint8_t Command) //Send command value, and high/low by
 
 int16_t ReadWord(uint8_t Adr, uint8_t Command)  //Send command value, returns entire 16 bit word
 {
-	Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions 
+	// Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions 
 	bool Error = SendCommand(Adr, Command);
 	si.i2c_stop(); 
 	// Serial.print("Error = "); Serial.println(Error); //DEBUG!
@@ -273,7 +317,7 @@ int16_t ReadWord(uint8_t Adr, uint8_t Command)  //Send command value, returns en
 	si.i2c_stop();
 	// if(Error == true) return ((ByteHigh << 8) | ByteLow); //If read succeeded, return concatonated value
 	// else return -1; //Return error if read failed
-	return ((int16_t)(ByteHigh << 8) | (int16_t)ByteLow) >> 4; //DEBUG!  //FIX! Right shift?? 
+	return ((int16_t)(ByteHigh << 8) | (int16_t)ByteLow); //DEBUG!  //FIX! Right shift?? 
 }
 
 int ReadWord_LE(uint8_t Adr, uint8_t Command)  //Send command value, returns entire 16 bit word
@@ -289,7 +333,7 @@ int ReadWord_LE(uint8_t Adr, uint8_t Command)  //Send command value, returns ent
 	return ((ByteHigh << 8) | ByteLow); //DEBUG!
 }
 
-void SplitAndLoad(uint8_t Pos, unsigned int Val) //Write 16 bits
+void SplitAndLoad(uint8_t Pos, int16_t Val) //Write 16 bits
 {
 	uint8_t Len = sizeof(Val);
 	for(int i = Pos; i < Pos + Len; i++) {
