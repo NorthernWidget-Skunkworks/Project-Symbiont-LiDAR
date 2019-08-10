@@ -47,8 +47,13 @@ void setup() {
   // Serial.println("begin"); //DEBUG!
   // pinMode(ADR_SEL_PIN, INPUT_PULLUP);
   // if(!digitalRead(ADR_SEL_PIN)) ADR = ADR_Alt; //If solder jumper is bridged, use alternate address //DEBUG!
+  pinMode(14, OUTPUT);
+  digitalWrite(14, HIGH);
+  pinMode(POWER_SW, OUTPUT);
+	digitalWrite(POWER_SW, HIGH); //Turn off output power //FIX??
   Wire.begin(ADR);  //Begin slave I2C
   Serial.begin(9600);
+  Serial.println("START"); //DEBUG!
   // EEPROM.write(0, ADR);
 
   //Setup I2C slave
@@ -57,14 +62,16 @@ void setup() {
 	Wire.onReceive(receiveEvent);
 	Wire.onStop(stopEvent);
 
-	pinMode(POWER_SW, OUTPUT);
-	digitalWrite(POWER_SW, LOW); //Turn on output power //FIX??
+	
 	pinMode(7, INPUT); //DEBUG! 
 	pinMode(11, INPUT);
 	pinMode(13, INPUT);
+	delay(10);
+	digitalWrite(POWER_SW, LOW); //Turn on power
   si.i2c_init(); //Begin I2C master
   InitAccel();
   InitLiDAR();
+  digitalWrite(14, LOW);
 
 }
 
