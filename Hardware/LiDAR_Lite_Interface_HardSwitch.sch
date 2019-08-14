@@ -15327,6 +15327,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="J3" library="bschulz" deviceset="CONN_02" device=""/>
+<part name="R15" library="bschulz_passives" deviceset="R-EU_" device="R0603" technology="330" value="330"/>
+<part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15576,9 +15578,16 @@ High Current (JP1, CLOSED) ~ 230mA</text>
 <instance part="GND19" gate="1" x="274.32" y="0" smashed="yes">
 <attribute name="VALUE" x="271.78" y="-2.54" size="1.778" layer="96"/>
 </instance>
-<instance part="J3" gate="G$1" x="-10.16" y="71.12" smashed="yes">
-<attribute name="VALUE" x="-12.7" y="66.294" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="-12.7" y="76.708" size="1.778" layer="95" font="vector"/>
+<instance part="J3" gate="G$1" x="-20.32" y="71.12" smashed="yes">
+<attribute name="VALUE" x="-22.86" y="66.294" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="-22.86" y="76.708" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="R15" gate="G$1" x="-7.62" y="83.82" smashed="yes" rot="R90">
+<attribute name="NAME" x="-9.1186" y="80.01" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-4.318" y="80.01" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND21" gate="1" x="-7.62" y="63.5" smashed="yes">
+<attribute name="VALUE" x="-10.16" y="60.96" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -15642,11 +15651,6 @@ High Current (JP1, CLOSED) ~ 230mA</text>
 <pinref part="D1" gate="G$1" pin="CATHODE"/>
 <wire x1="10.16" y1="68.58" x2="10.16" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="GND20" gate="1" pin="GND"/>
-<pinref part="J3" gate="G$1" pin="1"/>
-<wire x1="-2.54" y1="71.12" x2="2.54" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="71.12" x2="2.54" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="68.58" x2="10.16" y2="68.58" width="0.1524" layer="91"/>
-<junction x="10.16" y="68.58"/>
 </segment>
 <segment>
 <pinref part="C5" gate="G$1" pin="1"/>
@@ -15730,6 +15734,12 @@ High Current (JP1, CLOSED) ~ 230mA</text>
 <pinref part="GND19" gate="1" pin="GND"/>
 <wire x1="274.32" y1="2.54" x2="274.32" y2="5.08" width="0.1524" layer="91"/>
 <junction x="274.32" y="5.08"/>
+</segment>
+<segment>
+<pinref part="J3" gate="G$1" pin="1"/>
+<wire x1="-12.7" y1="71.12" x2="-7.62" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="GND21" gate="1" pin="GND"/>
+<wire x1="-7.62" y1="66.04" x2="-7.62" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5V_SW" class="0">
@@ -16114,14 +16124,10 @@ High Current (JP1, CLOSED) ~ 230mA</text>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="D1" gate="G$1" pin="ANODE"/>
-<pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="10.16" y1="76.2" x2="10.16" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="J3" gate="G$1" pin="2"/>
-<wire x1="-2.54" y1="73.66" x2="2.54" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="73.66" x2="2.54" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="76.2" x2="10.16" y2="76.2" width="0.1524" layer="91"/>
-<junction x="10.16" y="76.2"/>
+<wire x1="-12.7" y1="73.66" x2="-7.62" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="73.66" x2="-7.62" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="STAT_LED" class="0">
@@ -16130,6 +16136,9 @@ High Current (JP1, CLOSED) ~ 230mA</text>
 <wire x1="10.16" y1="88.9" x2="10.16" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="91.44" x2="12.7" y2="91.44" width="0.1524" layer="91"/>
 <label x="12.7" y="91.44" size="1.778" layer="95" xref="yes"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="10.16" y1="88.9" x2="-7.62" y2="88.9" width="0.1524" layer="91"/>
+<junction x="10.16" y="88.9"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="PB3"/>
@@ -16348,6 +16357,13 @@ High Current (JP1, CLOSED) ~ 230mA</text>
 <pinref part="U3" gate="G$1" pin="PA5"/>
 <wire x1="50.8" y1="78.74" x2="45.72" y2="78.74" width="0.1524" layer="91"/>
 <label x="45.72" y="78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="R10" gate="G$1" pin="1"/>
+<pinref part="D1" gate="G$1" pin="ANODE"/>
+<wire x1="10.16" y1="76.2" x2="10.16" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
