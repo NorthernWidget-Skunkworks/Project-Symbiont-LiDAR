@@ -16,3 +16,27 @@ The following shows the same event, but a detailed view of the turn on event to 
 * Yellow -> `FLG`
 * Blue -> I<sub>In</sub> (10V/A)
 * Green -> V<sub>Out</sub>
+
+##### v0.1 Update
+Testing for v0.1 hardware (switched from MOSFET control to MIC2544 load switch with current limiting)
+
+Inrush current with Margay v2.2 output rail used as power supply. R<sub>Lim</sub> = 2.2k&Omega; 
+Note, initial inrush spike, then reduced current. Initial spike does not result in brown out of Margay. LiDAR Lite static current consumption is able to be supported by the Margay v2.2 external 3.3v rail.
+![v0.1 Power On, Margay Supply](TEK00109.PNG)
+* Yellow -> I<sub>In</sub> (10V/A)
+* Blue -> V<sub>In</sub> 
+
+This figure shows the same waveform as above, but a detailed view of the switching 
+![v0.1 Power On Detail, Margay Supply](TEK00110.PNG)
+* Yellow -> I<sub>In</sub> (10V/A)
+* Blue -> V<sub>In</sub> 
+
+This figure shows the risetime of the 5v switched rail on board the Symbiont board. In this case we see the rise time which is controlled by the limiting of the current from the MIC2544 switch (R<sub>Lim</sub> = 2.2k&Omega;)
+![v0.1 5v SW Rise Time, Margay Supply](TEK00111.PNG)
+* Red -> V<sub>5v_SW</sub>
+* Blue -> V<sub>In</sub> 
+
+The following shows the problem if the current limit is set too high (R<sub>Lim</sub> = 1.05k&Omega;), the core 5v rail sags (due to hitting the current limit of the boost converter), which causes the brown out detect to engage and lock the device into a perpetual reset state. After the reset is triggered due to the sag of the core voltage below 4.3v (brownout limit), we see oscillation occur and the device held in reset.
+![Excess current limit, Power Supply](TEK00112.PNG)
+* Red -> V<sub>5v_Core</sub>
+* Yellow -> I<sub>In</sub> 
