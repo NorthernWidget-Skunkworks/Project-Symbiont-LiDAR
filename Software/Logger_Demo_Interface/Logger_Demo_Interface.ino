@@ -1,7 +1,11 @@
 #include <Wire.h>
+#include <Margay.h>
+
+Margay Logger(Model_2v0);
 
 void setup() {
   // put your setup code here, to run once:
+  Logger.PowerAux(ON);
   Wire.begin();
   Serial.begin(9600);
 }
