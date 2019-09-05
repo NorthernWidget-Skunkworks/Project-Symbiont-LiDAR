@@ -45,7 +45,7 @@ volatile uint8_t ADR = 0x40; //Use arbitraty address, change using generall call
 // const uint8_t ADR_Alt = 0x41; //Alternative device address  //WARNING! When a #define is used instead, problems are caused
 
 unsigned int Config = 0; //Global config value
-unsigned long Period = 1000; //Number of ms between sample events for continuious running
+unsigned long Period = 100; //Number of ms between sample events for continuious running
 
 uint8_t Reg[10] = {0}; //Initialize registers
 // bool StartSample = true; //Flag used to start a new converstion, make a conversion on startup
@@ -75,7 +75,7 @@ void setup() {
 	digitalWrite(POWER_SW, LOW); //Turn off output power //FIX??
   Wire.begin(ADR);  //Begin slave I2C
   Serial.begin(9600);
-  Serial.println("START"); //DEBUG!
+  // Serial.println("START"); //DEBUG!
   // EEPROM.write(0, ADR);
 
   //Setup I2C slave
@@ -87,10 +87,11 @@ void setup() {
 	
 	pinMode(ACCEL_INT, INPUT); //DEBUG! 
 	pinMode(MODE_READ, INPUT);
-	pinMode(MODE_TRIGGER, INPUT);
+	pinMode(MODE_TRIGGER, OUTPUT);
 	pinMode(HALL_SWITCH, INPUT); 
 	pinMode(ENABLE, OUTPUT);
 	digitalWrite(ENABLE, LOW);
+	digitalWrite(MODE_TRIGGER, HIGH); //Configure as pullup
 
 	delay(10);
 	digitalWrite(POWER_SW, HIGH); //Turn on power
@@ -149,17 +150,26 @@ void loop() {
 	while(((Stat1 & 0x08) >> 3) != 1 || Stat2 != 0xFF && (millis() - LocalTime) < GlobalTimeout) {  //Try to get status from 
 		Stat1 = ReadByte(ACCEL_ADR, 0x27);
 		Stat2 = ReadByte(ACCEL_ADR, 0x07);
+		delay(1); //DEBUG!
 	}
 	if((millis() - LocalTime) < GlobalTimeout) AccelFail = true; //Set flag if timeout occoured 
 	else AccelFail = false;
+
+	// si.i2c_read(false);
+	// si.i2c_read(false);
+	// si.i2c_read(false); //DEBUG!
+	// si.i2c_read(false);
+	// si.i2c_read(false);
+	delay(5); //DEBUG!
 	// while(((ReadByte(ACCEL_ADR, 0x27) & 0x08) >> 3) != 1 || (digitalRead(7) == LOW)); //Wait for updated values
 
 	// Serial.println("START"); //DEBUG!
 	// Serial.println(Stat1, BIN); //DEBUG!	
 	// Serial.println(Stat2, BIN); //DEBUG!
 	// Serial.print("\n\n"); //Newline return
+	int16_t Range = GetRange();
 	Serial.print('R'); //Preceed range value
-	Serial.println(GetRange()); 
+	Serial.println(Range); 
 	digitalWrite(ENABLE, LOW);
 	digitalWrite(POWER_SW, LOW); //Turn off 5v switched power
 	GetOffsets(); //Read in offsets
@@ -293,12 +303,12 @@ uint8_t InitLiDAR()
 	// WriteByte(LIDAR_ADR, 0x1C, 0x00);
 
 	WriteByte(LIDAR_ADR, 0x02, 0x80);
-	WriteByte(LIDAR_ADR, 0x04, 0x08);
+	WriteByte(LIDAR_ADR, 0x04, 0x09);  //Setup MODE pin to indicate satus 
 	WriteByte(LIDAR_ADR, 0x12, 0x05);
 	WriteByte(LIDAR_ADR, 0x1C, 0xB0);
 }	
 
-float GetRange()  //FIX! add range constraint??
+int16_t GetRange()  //FIX! add range constraint??
 {
 	int16_t Data = 0; //Used to store results
 	WriteByte(LIDAR_ADR, 0x00, 0x01);
@@ -309,7 +319,8 @@ float GetRange()  //FIX! add range constraint??
 	// si.i2c_write(0x01); //Command to take measurment WITH correction bias 
 	// si.i2c_stop();
 	unsigned long LocalTime = millis();
-	while((ReadByte(LIDAR_ADR, 0x01) & 0x01) == 1 && (millis() - LocalTime) < GlobalTimeout); //Wait for updated value or timeout
+	// while((ReadByte(LIDAR_ADR, 0x01) & 0x01) == 1 && (millis() - LocalTime) < GlobalTimeout && digitalRead(MODE_READ) == LOW); //Wait for updated value or timeout
+	while((millis() - LocalTime) < GlobalTimeout && digitalRead(MODE_READ) == LOW); //Wait for updated value or timeout
 	if((millis() - LocalTime) < GlobalTimeout) {  //If timeout has NOT occoured, read as normal
 		Data = ReadWord_LE(LIDAR_ADR, 0x0F);
 		SplitAndLoad(0x02, Data);
@@ -396,7 +407,7 @@ int ReadByte(uint8_t Adr, uint8_t Command) //Send command value, and high/low by
 	bool Error = SendCommand(Adr, Command);
 	si.i2c_stop(); //DEBUG!
 	si.i2c_start((Adr << 1) | READ);
-	uint8_t Val = si.i2c_read(false);
+	uint8_t Val = si.i2c_read(true);  //DEBUG! origionally false 
 	// uint8_t ValHigh = si.i2c_read(false);
 	si.i2c_stop();
 	Error = true; //DEBUG!
