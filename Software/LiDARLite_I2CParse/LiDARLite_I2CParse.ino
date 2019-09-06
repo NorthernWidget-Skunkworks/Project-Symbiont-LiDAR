@@ -2,7 +2,7 @@
 
 String Header = ""; //Information header
 uint8_t I2CVals[0] = {}; 
-unsigned long UpdateRate = 60; //Number of seconds between readings 
+unsigned long UpdateRate = 300; //Number of seconds between readings 
 
 Margay Logger(Model_2v0);
 
@@ -20,12 +20,17 @@ void loop() {
 String Update()
 {
 	Init();
+	delay(200); //DEBUG!
 	return ReadI2CData();
 }
 
 void Init() 
 {
 	Wire.begin(); 
+	Wire.beginTransmission(0x40);
+	Wire.write(0x01);
+	Wire.write(0x00); //Set for high sensitivity
+	Wire.endTransmission();
 }
 
 

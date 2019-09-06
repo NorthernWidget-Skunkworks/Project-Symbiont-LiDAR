@@ -61,6 +61,7 @@ int16_t Offsets[3] = {0};  //X,Y,Z acceleration offsets to zero the angle of the
 int16_t AccelVals[3] = {0}; //Global storage for acceleration data values to be shared between EEPROM functions and getter functions 
 
 bool SwitchLatch = false;  //Latching functionality control for Hall effect switch 
+uint8_t LiDAR_Config = 0; //Use default config 
 
 void setup() {
   // Serial.begin(115200); //DEBUG!
@@ -140,7 +141,7 @@ void loop() {
 	// while(digitalRead(7), LOW); //Wait for updated values //DEBUG!
 	// ReadByte(ACCEL_ADR, 0x27);
 	// ReadWord(ACCEL_ADR, OUT_X_ADR);
-
+	LiDAR_Config = Reg[1] & 0x03; //Pull low two bits from Config reg 1 to get Lidar configuration state 
 	InitLiDAR(); //reinitialize LiDAR after power cycle 
 	unsigned long StartTime = millis();  //Measure time from start of measurment 
 	uint8_t Stat1 = ReadByte(ACCEL_ADR, 0x27); 
@@ -301,11 +302,40 @@ uint8_t InitLiDAR()
 	// WriteByte(LIDAR_ADR, 0x04, 0x08);
 	// WriteByte(LIDAR_ADR, 0x12, 0x05);
 	// WriteByte(LIDAR_ADR, 0x1C, 0x00);
-
-	WriteByte(LIDAR_ADR, 0x02, 0x80);
-	WriteByte(LIDAR_ADR, 0x04, 0x09);  //Setup MODE pin to indicate satus 
-	WriteByte(LIDAR_ADR, 0x12, 0x05);
-	WriteByte(LIDAR_ADR, 0x1C, 0xB0);
+	uint8_t SigCountMax = 0;
+	uint8_t AcqConfigReg = 0;
+	uint8_t RefCountMax = 0;
+	uint8_t ThresholdBypass = 0;
+	switch(LiDAR_Config) {
+		case 0: //Default, ballanced
+			SigCountMax = 0x80;
+			AcqConfigReg = 0x08;
+			RefCountMax = 0x05;
+			ThresholdBypass = 0x00;
+			break;
+		case 1: //High sensitivity
+			SigCountMax = 0x80;
+			AcqConfigReg = 0x08;
+			RefCountMax = 0x05;
+			ThresholdBypass = 0x80;
+			break;
+		case 2: //Low sensitivity
+			SigCountMax = 0x80;
+			AcqConfigReg = 0x08;
+			RefCountMax = 0x05;
+			ThresholdBypass = 0xB0;
+			break;
+		case 3: //Max range
+			SigCountMax = 0xFF;
+			AcqConfigReg = 0x08;
+			RefCountMax = 0x05;
+			ThresholdBypass = 0x00;
+			break;
+	}
+	WriteByte(LIDAR_ADR, 0x02, SigCountMax);
+	WriteByte(LIDAR_ADR, 0x04, AcqConfigReg | 0x01);  //Setup MODE pin to indicate satus 
+	WriteByte(LIDAR_ADR, 0x12, RefCountMax);
+	WriteByte(LIDAR_ADR, 0x1C, ThresholdBypass);
 }	
 
 int16_t GetRange()  //FIX! add range constraint??
