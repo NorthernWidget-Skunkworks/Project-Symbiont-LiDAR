@@ -47,7 +47,7 @@ volatile uint8_t ADR = 0x40; //Use arbitraty address, change using generall call
 unsigned int Config = 0; //Global config value
 unsigned long Period = 100; //Number of ms between sample events for continuious running
 
-uint8_t Reg[10] = {0}; //Initialize registers
+uint8_t Reg[16] = {0}; //Initialize registers
 // bool StartSample = true; //Flag used to start a new converstion, make a conversion on startup
 // const unsigned int UpdateRate = 5; //Rate of update
 
@@ -106,6 +106,7 @@ void setup() {
 		UpdateOffset(Offsets); //Clear values (offsets are 0 on startup until read into)
 		SwitchLatch = true; //Set latch to prevent override 
 	}
+	digitalWrite(STAT_LED, HIGH);
 
 }
 
@@ -168,9 +169,11 @@ void loop() {
 	// Serial.println(Stat1, BIN); //DEBUG!	
 	// Serial.println(Stat2, BIN); //DEBUG!
 	// Serial.print("\n\n"); //Newline return
-	int16_t Range = GetRange();
+
+	int16_t Range = GetRange();  //DEBUG! Replace!
 	Serial.print('R'); //Preceed range value
 	Serial.println(Range); 
+
 	digitalWrite(ENABLE, LOW);
 	digitalWrite(POWER_SW, LOW); //Turn off 5v switched power
 	GetOffsets(); //Read in offsets
@@ -286,9 +289,13 @@ float GetG(bool Set)  //FIX! Add offset support //By default set/send data to re
 			Serial.print('Y'); Serial.println(Axis[1] - Offsets[1]);
 			Serial.print('Z'); Serial.println(Axis[2] - Offsets[2]);
 
-			SplitAndLoad(0x04, Axis[0] - Offsets[0]);
-			SplitAndLoad(0x06, Axis[1] - Offsets[1]);
-			SplitAndLoad(0x08, Axis[2] - Offsets[2]);
+			SplitAndLoad(0x04, Axis[0]);  //Load accel values
+			SplitAndLoad(0x06, Axis[1]);
+			SplitAndLoad(0x08, Axis[2]);
+
+			SplitAndLoad(0x0A, Offsets[0]);  //Load offsets
+			SplitAndLoad(0x0C, Offsets[1]);
+			SplitAndLoad(0x0E, Offsets[2]);
 		}
 	}
 
@@ -359,6 +366,7 @@ int16_t GetRange()  //FIX! add range constraint??
 	else {  //Otherwise set failure flag and set out of range data value
 		LidarFail = true;
 		Data = -9999; 
+		SplitAndLoad(0x02, Data);
 	}
 
 	return Data;
