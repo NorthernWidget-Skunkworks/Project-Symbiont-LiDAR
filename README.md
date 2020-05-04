@@ -255,12 +255,13 @@ This is what we used for our build; you can be creative based on materials and a
   * [4 cap nuts](https://www.mcmaster.com/99022A101) for \#4-40 screws
 * Cable to logger
   * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
-* Mounting plates
+* Mounting plates (see [CNC files](CNC) for fabrication)
   * Delrin sheet **dimensions?**
   * U bolts **dimensions?**
   * 1/4"-20 nuts, washers, and bolts **1 inch?**
 
 >>@bschulz1701 Delrin dimensions?
+>>@bschulz1701 Link to Easel too?
 
 ### Assembly
 
@@ -284,15 +285,25 @@ This is what we used for our build; you can be creative based on materials and a
 
 7. Test the LiDAR Lite unit.
 
-8. When satisfied with the tests, place desiccant in the box. Then securely screw the lid onto the box to seal the LiDAR Lite + Symbiont unit.
+8. When satisfied with the tests, turn off the data logger and place a protective cover over the lenses of the LiDAR Lite for safety during transport. We have [a set of "safety glasses" available for 3D printing](3Dprint).
 
-9. Use the bolts to attach the LiDAR Lite box to the mounting plate.
+9. Place desiccant in the box.
+
+10. Securely screw the lid onto the box to seal the LiDAR Lite + Symbiont unit.
+
+11. Mark the corner of the box next to the Hall-effect sensor, and mark the orientations of the roll and pitch axes.
+>> @bschulz1701 Any tips on this locations / orientations? I'm being lazy though; could look at the schematic myself.
+
+12. Place the box on a measured flat surface and tap the magnet to the marked location by the Hall Effect sensor. This will appropriately zero the offsets for the sensor and increase its near-horizontal accuracy significantly. For a convenient magnet holder, you can use our [3D-printable magnetic wand][3Dprint], which holds a small rare-Earth magnet.
+>> @bschulz1701: Magnet model/dimensions?
+
+13. Use the bolts to attach the LiDAR Lite box to [the mounting plate](CNC).
 
 ![Side view: long axis](Documentation/images/SideView_LongAxis.png)
 
 ![Side view: short axis, LiDAR Lite cable](Documentation/images/SideView_LiDARcableSide.png)
 
-10. (Can wait for field installation) attach the unit via its mounting plate to the appropriate pipe, post, etc.
+14. (Can wait for field installation) attach the unit via its mounting plate to the appropriate pipe, post, etc.
 
 ![Field installation prototype in the lab: Sensor only](Documentation/images/FieldInstallation_LabPrototype_SensorOnly_orig2019-09-09_20200501.jpg)
 
