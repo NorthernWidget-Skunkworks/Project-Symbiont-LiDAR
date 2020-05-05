@@ -110,7 +110,7 @@ Once it is bootloaded and connected with a LiDAR Lite sensor, you should be able
 
 ### Very simple Arduino code
 
-This code is intended for any generic Arduino system
+This code is intended for any generic Arduino system.
 
 ```c++
 // Include the Symbiont library
@@ -243,7 +243,7 @@ void init(){
 This is what we used for our build; you can be creative based on materials and availability.
 
 * Main enclosure
-  * Polycase box [WP-20F](https://www.polycase.com/wp-20f)
+  * Polycase box [WC-20F (clear lid)](https://www.polycase.com/wc-20f)
   * [2x \#4 screws](https://www.polycase.com/screws-mbr-100) to mount Symbiont in box
   * Cable gland (MODEL NUMBER) for cable to LiDAR Lite
   * Strain-relieved cable gland (MODEL NUMBER) for cable to logger
