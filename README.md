@@ -56,7 +56,7 @@ Paul, J. D., Buytaert, W., & Sah, N.(2020). A technical evaluation of lidar-base
 
 ## Assembly
 
-Assembling this data logger is possible by hand with sufficient skill and the following tools:
+Assembling this sensor is possible by hand with sufficient skill and the following tools:
 * Temperature-controlled soldering iron
 * Hot-air rework station
 * Equipment for stenciling with solder paste
