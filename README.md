@@ -34,12 +34,11 @@ Paul, J. D., Buytaert, W., & Sah, N.(2020). A technical evaluation of lidar-base
     * Power in and Ground
     * Digital communications
       * I2C
-      * SPI
 * Power
-  * Voltage limits: **@bschulz1701?**
-  * Power consumption: **@bschulz1701?**
-  * ***Anything about power regulation to LiDAR Lite***
-* Fault recovery **@bschulz1701: anything here about how you use this to keep the LiDAR Lite's firmware issue(s) from causing the logger to hang, by shielding it with this board?**
+  * Voltage limits: 3.3 ~ 5V
+  * Power consumption: ~0.5mA @ 4.5V, take reading every 60 seconds, then power down **@bschulz1701 Update once you get notebook from lab**
+  * Power conditioning: Provides an onboard, high power, step up to 5V to allow for interface to 3.3V loggers 
+* Fault recovery: Using intermediate system to emulate an I2C connection prevents a global lockup of the logger system
 * Status LED **Include flash pattern details once defined**
 * Open-source licensing via CC BY-SA 4.0
 
@@ -97,9 +96,9 @@ Using this ISP, upload (as of the time of writing): [the Arduino sketch in this 
 
 ***Uploading using the in-system programmer.***
 
->> @bschulz1701: MightyCore library needed? Just the normal 1634 or anything special?
+>> @bschulz1701: MightyCore library needed? Just the normal 1634 or anything special? -> @awickert Yes, MightCore is needed, can get via board manager, do not need anything custom though
 
->> @bschulz1701: Any power supply needed beyond what ICSP header provides?
+>> @bschulz1701: Any power supply needed beyond what ICSP header provides? -> @awickert No, power via ISCP should be fine, if ICSP is not equiped to provide power, then can power conventionally via logger connection
 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
@@ -245,8 +244,8 @@ This is what we used for our build; you can be creative based on materials and a
 * Main enclosure
   * Polycase box [WC-20F (clear lid)](https://www.polycase.com/wc-20f)
   * [2x \#4 screws](https://www.polycase.com/screws-mbr-100) to mount Symbiont in box
-  * Cable gland (MODEL NUMBER) for cable to LiDAR Lite
-  * Strain-relieved cable gland (MODEL NUMBER) for cable to logger
+  * Cable gland ([Heyco M4365](https://www.heyco.com/Liquid_Tight_Cordgrips/product.cfm?product=Liquid-Tight-Cordgrips-Metric&section=Liquid_Tight_Cordgrips)) for cable to LiDAR Lite
+  * Strain-relieved cable gland ([Heyco M4425](https://www.heyco.com/Liquid_Tight_Cordgrips/product.cfm?product=Liquid-Tight-Cordgrips-Pigtail-Metric&section=Liquid_Tight_Cordgrips)) for cable to logger
   * Desiccant packs
 * LiDAR Rangefinder
   * [LiDAR Lite sensor](https://www.sparkfun.com/products/14599)
@@ -256,18 +255,18 @@ This is what we used for our build; you can be creative based on materials and a
 * Cable to logger
   * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
 * Mounting plates (see [CNC files](CNC) for fabrication)
-  * Delrin sheet **dimensions?**
+  * Delrin sheet **dimensions?** -> @awickert 1/4" thick
   * U bolts **dimensions?**
   * 1/4"-20 nuts, washers, and bolts **1 inch?**
 
->>@bschulz1701 Delrin dimensions?
->>@bschulz1701 Link to Easel too?
+>>@bschulz1701 Delrin dimensions? -> Dimentions of mount = 5" x 3.75"
+>>@bschulz1701 Link to Easel too? -> @awickert [Easel Link](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)
 
 ### Assembly
 
 1. Drill and tap the holes in the side of the box.
 
->> Bobby: are the holes in the walls of the box tapped? Size? Measurements?
+>> Bobby: are the holes in the walls of the box tapped? Size? Measurements? -> @awickert Yes, they are M20-1.5 tapped holes
 
 2. Install the sensor as shown below using two of the \#4 self-tapping screws. By mounting the LiDAR Lite at an angle, you can fix it to the box lid in a way that still allows the box to open and close properly.
 
@@ -292,10 +291,10 @@ This is what we used for our build; you can be creative based on materials and a
 10. Securely screw the lid onto the box to seal the LiDAR Lite + Symbiont unit.
 
 11. Mark the corner of the box next to the Hall-effect sensor, and mark the orientations of the roll and pitch axes.
->> @bschulz1701 Any tips on this locations / orientations? I'm being lazy though; could look at the schematic myself.
+>> @bschulz1701 Any tips on this locations / orientations? I'm being lazy though; could look at the schematic myself. -> @awickert I thought there was an orientation aid in the models folder, which would fit over that side and have a little hole in the location of the hall effect so you can mark it easily, but I could be wrong. If not, we could make this
 
 12. Place the box on a measured flat surface and tap the magnet to the marked location by the Hall Effect sensor. This will appropriately zero the offsets for the sensor and increase its near-horizontal accuracy significantly. For a convenient magnet holder, you can use our [3D-printable magnetic wand][3Dprint], which holds a small rare-Earth magnet.
->> @bschulz1701: Magnet model/dimensions?
+>> @bschulz1701: Magnet model/dimensions? -> @awickert this was a generic magnet we had lying around from Amazon, but if we wanted to recomend a specific part I would say these from Apex magnets, I have used them many times, [3/8" x 1/8" Neodymium Disk Magnet](https://www.apexmagnets.com/magnets/3-8-x-1-8-disc-neodymium-magnet)
 
 13. Use the bolts to attach the LiDAR Lite box to [the mounting plate](CNC).
 
