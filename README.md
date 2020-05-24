@@ -255,7 +255,7 @@ This is what we used for our build; you can be creative based on materials and a
 * Cable to logger
   * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
 * Mounting plates (see [CNC files](CNC) for fabrication)
-  * Delrin sheet **dimensions?** -> @awickert 1/4" thick
+  * Acetal (Delrin) sheet: 1/4" thick. We commmonly use 12x24" [black](https://www.eplastics.com/ACTLBLK0-25012X24) or [natural](https://www.eplastics.com/ACTLNAT0-25012X24) color
   * U bolts **dimensions?**
   * 1/4"-20 nuts, washers, and bolts **1 inch?**
 
