@@ -65,7 +65,7 @@ Assembling this sensor is possible by hand with sufficient skill and the followi
 Most of the components on this board are coarse enough in pitch that assembly by hand is expected to be relatively straightforward. However, if you are concerned about this, there are PCB assembly workshops located in many parts of the world.
 >> THOUGHT: I have basic instructions for assembly on the [Project Walrus](https://github.com/NorthernWidget-Skunkworks/Project-TPDH-Walrus) README; I will not reproduce these here just yet, as we might want to set up a separate assembly guide, mostly with good links to existing resources, since our writing something of this nature would be to reinvent the wheel.
 
-## Uploading the firmware
+## Firmware
 
 ### Downloading and installing the Arduino IDE
 
