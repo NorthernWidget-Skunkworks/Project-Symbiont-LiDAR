@@ -261,7 +261,7 @@ This is what we used for our build; you can be creative based on materials and a
 
 ![Mounting plate perspective view in Easel](Documentation/images/EaselSymbiontMount.png)
 
-**Mounting plate perspective view in [Easel](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)** *for easy integration with the X-carve series of lower cost CNC routers.*
+***Mounting plate perspective view in [Easel](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)*** *for easy integration with the X-carve series of lower cost CNC routers.*
 
 ### Assembly
 
