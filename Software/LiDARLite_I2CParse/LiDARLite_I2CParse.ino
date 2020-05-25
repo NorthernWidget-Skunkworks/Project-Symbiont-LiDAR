@@ -62,7 +62,12 @@ String ReadI2CData()
 		DataSet[i] = ((Data2 << 8) | Data1); //Store data in array
 	}
 
-	float ValX = DataSet[1]; //Convert g vals to floats for math
+  // Takes up memory but makes code easier to read. Could be more efficient.
+  // Perhaps use pointers, or just comments?
+  float Range = DataSet[0]
+
+  // Convert g vals to floats for math
+	float ValX = DataSet[1];
 	float ValY = DataSet[2];
 	float ValZ = DataSet[3];
 
