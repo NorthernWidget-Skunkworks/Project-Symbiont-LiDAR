@@ -255,9 +255,13 @@ This is what we used for our build; you can be creative based on materials and a
   * [4 cap nuts](https://www.mcmaster.com/99022A101) for \#4-40 screws
 * Cable to logger
   * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
-* Mounting plates (see [CNC files](CNC) for fabrication)
+* Mounting plates (see [CNC files](CNC) and [Easel](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ) for fabrication)
   * U bolts **dimensions?**
   * 1/4"-20 nuts, washers, and bolts **1 inch?**
+
+![Mounting plate perspective view in Easel](Documentation/images/EaselSymbiontMount.png)
+
+**Mounting plate perspective view in [Easel](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)** *for easy integration with the X-carve series of lower cost CNC routers.*
 
 ### Assembly
 
@@ -289,9 +293,9 @@ This is what we used for our build; you can be creative based on materials and a
 >> @bschulz1701 Any tips on this locations / orientations? I'm being lazy though; could look at the schematic myself. -> @awickert I thought there was an orientation aid in the models folder, which would fit over that side and have a little hole in the location of the hall effect so you can mark it easily, but I could be wrong. If not, we could make this
 
 12. Place the box on a measured flat surface and tap the magnet to the marked location by the Hall Effect sensor. This will appropriately zero the offsets for the sensor and increase its near-horizontal accuracy significantly. For a convenient magnet holder, you can use our [3D-printable magnetic wand][3Dprint], which holds a small rare-Earth magnet.
->> @bschulz1701: Magnet model/dimensions? -> @awickert this was a generic magnet we had lying around from Amazon, but if we wanted to recomend a specific part I would say these from Apex magnets, I have used them many times, [3/8" x 1/8" Neodymium Disk Magnet](https://www.apexmagnets.com/magnets/3-8-x-1-8-disc-neodymium-magnet)
+This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](https://www.apexmagnets.com/magnets/3-8-x-1-8-disc-neodymium-magnet) works well in our experience.
 
-13. Use the bolts to attach the LiDAR Lite box to [the mounting plate](CNC).
+13. Use the bolts to attach the LiDAR Lite box to [the mounting plate](CNC) (see also the [Easel online CNC setup](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)).
 
 ![Side view: long axis](Documentation/images/SideView_LongAxis.png)
 
