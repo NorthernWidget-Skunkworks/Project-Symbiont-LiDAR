@@ -37,7 +37,7 @@ Paul, J. D., Buytaert, W., & Sah, N.(2020). A technical evaluation of lidar-base
 * Power
   * Voltage limits: 3.3 ~ 5V
   * Power consumption: ~0.5mA @ 4.5V, take reading every 60 seconds, then power down **@bschulz1701 Update once you get notebook from lab**
-  * Power conditioning: Provides an onboard, high power, step up to 5V to allow for interface to 3.3V loggers 
+  * Power conditioning: Provides an onboard, high power, step up to 5V to allow for interface to 3.3V loggers
 * Fault recovery: Using intermediate system to emulate an I2C connection prevents a global lockup of the logger system
 * Status LED **Include flash pattern details once defined**
 * Open-source licensing via CC BY-SA 4.0
@@ -87,18 +87,15 @@ Using this ISP, upload (as of the time of writing): [the Arduino sketch in this 
 
 1. Open the Arduino IDE. **MIGHTY CORE LIBRARIES NEEDED???**
 2. Select the desired board -- **look up mighty core**
-3. **power needed beyond ISP?**
-4. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around.
-5. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
-6. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
+3. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
+4. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
+5. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
 
 ![Upload using programmer](Documentation/images/UploadUsingProgrammer.png)
 
 ***Uploading using the in-system programmer.***
 
 >> @bschulz1701: MightyCore library needed? Just the normal 1634 or anything special? -> @awickert Yes, MightCore is needed, can get via board manager, do not need anything custom though
-
->> @bschulz1701: Any power supply needed beyond what ICSP header provides? -> @awickert No, power via ISCP should be fine, if ICSP is not equiped to provide power, then can power conventionally via logger connection
 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
@@ -247,6 +244,10 @@ This is what we used for our build; you can be creative based on materials and a
   * Cable gland ([Heyco M4365](https://www.heyco.com/Liquid_Tight_Cordgrips/product.cfm?product=Liquid-Tight-Cordgrips-Metric&section=Liquid_Tight_Cordgrips)) for cable to LiDAR Lite
   * Strain-relieved cable gland ([Heyco M4425](https://www.heyco.com/Liquid_Tight_Cordgrips/product.cfm?product=Liquid-Tight-Cordgrips-Pigtail-Metric&section=Liquid_Tight_Cordgrips)) for cable to logger
   * Desiccant packs
+* Mounting plate
+  * Material: Acetal (Delrin) sheet: 1/4" thick. We commmonly use 12x24" [black](https://www.eplastics.com/ACTLBLK0-25012X24) or [natural](https://www.eplastics.com/ACTLNAT0-25012X24) color
+  * Rectangular dimensions for mount: 127 x 95.25 x 6.35 mm (5.00" x 3.75" x 0.25")
+  * [Design](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ) on Easel for X-carve. Note the 7 mm depth to ensure that the bit cuts all the way through the Acetal; use a piece of scrap material on your cutting bed if you want to protect it.
 * LiDAR Rangefinder
   * [LiDAR Lite sensor](https://www.sparkfun.com/products/14599)
   * [4 sealing screws](https://www.mcmaster.com/90825A142): \#4-40 x 5/16"
@@ -255,18 +256,12 @@ This is what we used for our build; you can be creative based on materials and a
 * Cable to logger
   * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
 * Mounting plates (see [CNC files](CNC) for fabrication)
-  * Acetal (Delrin) sheet: 1/4" thick. We commmonly use 12x24" [black](https://www.eplastics.com/ACTLBLK0-25012X24) or [natural](https://www.eplastics.com/ACTLNAT0-25012X24) color
   * U bolts **dimensions?**
   * 1/4"-20 nuts, washers, and bolts **1 inch?**
 
->>@bschulz1701 Delrin dimensions? -> Dimentions of mount = 5" x 3.75"
->>@bschulz1701 Link to Easel too? -> @awickert [Easel Link](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)
-
 ### Assembly
 
-1. Drill and tap the holes in the side of the box.
-
->> Bobby: are the holes in the walls of the box tapped? Size? Measurements? -> @awickert Yes, they are M20-1.5 tapped holes
+1. Drill and tap 20 mm holes in the side of the box. Use a M20-1.5 tap for the threads
 
 2. Install the sensor as shown below using two of the \#4 self-tapping screws. By mounting the LiDAR Lite at an angle, you can fix it to the box lid in a way that still allows the box to open and close properly.
 
