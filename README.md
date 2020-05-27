@@ -244,7 +244,7 @@ This is what we used for our build; you can be creative based on materials and a
   * Strain-relieved cable gland ([Heyco M4425](https://www.heyco.com/Liquid_Tight_Cordgrips/product.cfm?product=Liquid-Tight-Cordgrips-Pigtail-Metric&section=Liquid_Tight_Cordgrips)) for cable to logger
   * Desiccant packs
 * Mounting plate
-  * Material: Acetal (Delrin) sheet: 1/4" thick. We commmonly use 12x24" [black](https://www.eplastics.com/ACTLBLK0-25012X24) or [natural](https://www.eplastics.com/ACTLNAT0-25012X24) color
+  * Material: Acetal (Delrin) sheet: 1/4" thick. We commmonly use [12x24" black](https://www.eplastics.com/ACTLBLK0-25012X24); the black pigment increases its UV resistance
   * Rectangular dimensions for mount: 127 x 95.25 x 6.35 mm (5.00" x 3.75" x 0.25")
   * [Design](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ) on Easel for X-carve. Note the 7 mm depth to ensure that the bit cuts all the way through the Acetal; use a piece of scrap material on your cutting bed if you want to protect it.
 * LiDAR Rangefinder
@@ -255,7 +255,7 @@ This is what we used for our build; you can be creative based on materials and a
 * Cable to logger
   * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
 * Mounting plates (see [CNC files](CNC) and [Easel](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ) for fabrication)
-  * U bolts 1/4" 20, inner diameter 3/4" to 1 3/4". We typically mount this sensor on 3/4" pipe or conduit, and recommend a U bolt designed to fit this.
+  * U bolts 1/4"-20, inner diameter 3/4" to 1 3/4". We typically mount this sensor on 3/4" pipe or conduit, and recommend a U bolt designed to fit this ([1/4"-20, 1 1/8" inner diameter](https://www.mcmaster.com/u-bolts/u-bolts-with-mounting-plates/))
   * 1/4"-20 nuts, washers, and bolts **1 inch?**
 
 ![Mounting plate perspective view in Easel](Documentation/images/EaselSymbiontMount.png)
