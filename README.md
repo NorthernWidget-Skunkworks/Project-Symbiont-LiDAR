@@ -255,7 +255,7 @@ This is what we used for our build; you can be creative based on materials and a
 * Cable to logger
   * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
 * Mounting plates (see [CNC files](CNC) and [Easel](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ) for fabrication)
-  * U bolts **dimensions?**
+  * U bolts 1/4" 20, inner diameter 3/4" to 1 3/4". We typically mount this sensor on 3/4" pipe or conduit, and recommend a U bolt designed to fit this.
   * 1/4"-20 nuts, washers, and bolts **1 inch?**
 
 ![Mounting plate perspective view in Easel](Documentation/images/EaselSymbiontMount.png)
