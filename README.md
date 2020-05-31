@@ -295,7 +295,6 @@ These assembly instructions assume that you have already fabricated [the mountin
 10. Securely screw the lid onto the box to seal the LiDAR Lite + Symbiont unit.
 
 11. Mark the corner of the box next to the Hall-effect sensor, and mark the orientations of the roll and pitch axes.
->> @bschulz1701 Any tips on this locations / orientations? I'm being lazy though; could look at the schematic myself. -> @awickert I thought there was an orientation aid in the models folder, which would fit over that side and have a little hole in the location of the hall effect so you can mark it easily, but I could be wrong. If not, we could make this
 
 12. Place the box on a measured flat surface and tap the magnet to the marked location by the Hall Effect sensor. This will appropriately zero the offsets for the sensor and increase its near-horizontal accuracy significantly. For a convenient magnet holder, you can use our [3D-printable magnetic wand][3Dprint], which holds a small rare-Earth magnet.
 This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](https://www.apexmagnets.com/magnets/3-8-x-1-8-disc-neodymium-magnet) works well in our experience.
