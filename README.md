@@ -39,7 +39,7 @@ Paul, J. D., Buytaert, W., & Sah, N.(2020). A technical evaluation of lidar-base
   * Power consumption: ~0.5mA @ 4.5V, take reading every 60 seconds, then power down **@bschulz1701 Update once you get notebook from lab**
   * Power conditioning: Provides an onboard, high power, step up to 5V to allow for interface to 3.3V loggers
 * Fault recovery: Using intermediate system to emulate an I2C connection prevents a global lockup of the logger system
-* Status LED **Include flash pattern details once defined**
+* Status LED
 * Open-source licensing via CC BY-SA 4.0
 
 ![Symbiont board](Documentation/images/SymbiontLiDAR_v010_top_annotated_20200501.png)
