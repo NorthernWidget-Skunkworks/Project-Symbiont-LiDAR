@@ -243,26 +243,32 @@ This is what we used for our build; you can be creative based on materials and a
   * Cable gland ([Heyco M4365](https://www.heyco.com/Liquid_Tight_Cordgrips/product.cfm?product=Liquid-Tight-Cordgrips-Metric&section=Liquid_Tight_Cordgrips)) for cable to LiDAR Lite
   * Strain-relieved cable gland ([Heyco M4425](https://www.heyco.com/Liquid_Tight_Cordgrips/product.cfm?product=Liquid-Tight-Cordgrips-Pigtail-Metric&section=Liquid_Tight_Cordgrips)) for cable to logger
   * Desiccant packs
-* Mounting plate
-  * Material: Acetal (Delrin) sheet: 1/4" thick. We commmonly use [12x24" black](https://www.eplastics.com/ACTLBLK0-25012X24); the black pigment increases its UV resistance
-  * Rectangular dimensions for mount: 127 x 95.25 x 6.35 mm (5.00" x 3.75" x 0.25")
-  * [Design](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ) on Easel for X-carve. Note the 7 mm depth to ensure that the bit cuts all the way through the Acetal; use a piece of scrap material on your cutting bed if you want to protect it.
-* LiDAR Rangefinder
+* LiDAR Rangefinder and attachment to enclosure
   * [LiDAR Lite sensor](https://www.sparkfun.com/products/14599)
   * [4 sealing screws](https://www.mcmaster.com/90825A142): \#4-40 x 5/16"
   * [4 washers](https://www.mcmaster.com/90107A005) for \#4 screws
   * [4 cap nuts](https://www.mcmaster.com/99022A101) for \#4-40 screws
+* Mounting plate
+  * Material: Acetal (Delrin) sheet: 1/4" thick. We commmonly use [12x24" black](https://www.eplastics.com/ACTLBLK0-25012X24); the black pigment increases its UV resistance
+  * Rectangular dimensions for mount: 127 x 95.25 x 6.35 mm (5.00" x 3.75" x 0.25")
+  * [Design](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ) on Easel for X-carve (see also [CNC files here](CNC)). Note the 7 mm depth to ensure that the bit cuts all the way through the Acetal; use a piece of scrap material on your cutting bed if you want to protect it.
+* Mounting plate fasteners
+  * 1/4"-20 hardware to attach the box to the mounting plate
+    * Bolts: [1" long; hex head convenient; zinc-plated medium-grade (Grade 5) recommended for lower price with good corrosion resistance](https://www.mcmaster.com/92865A542)
+    * Nuts: [Zinc-plated Grade 5](https://www.mcmaster.com/95462A029)
+    * Washers: Zinc-plated [SAE](https://www.mcmaster.com/90126A029) or [USS](https://www.mcmaster.com/90108A413)
+    * Lock washers: We typically use [split-lock washers](https://www.mcmaster.com/zinc-plated-steel-washers/), but [tooth-lock washers](https://www.mcmaster.com/91113A029) are good for high-vibration environments.
+  * 2 U bolts: 1/4"-20, inner diameter 3/4" to 1 3/4", to attach the mounting plate to a pipe. We typically mount this sensor on 3/4" pipe or conduit, and recommend a U bolt designed to fit this ([1/4"-20, 1 1/8" inner diameter](https://www.mcmaster.com/u-bolts/u-bolts-with-mounting-plates/for-pipe-size~3-4/)). Weather/corrosion resistance is helpful, especially if you are concerned about later removing the U bolts.
 * Cable to logger
   * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
-* Mounting plates (see [CNC files](CNC) and [Easel](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ) for fabrication)
-  * U bolts 1/4"-20, inner diameter 3/4" to 1 3/4". We typically mount this sensor on 3/4" pipe or conduit, and recommend a U bolt designed to fit this ([1/4"-20, 1 1/8" inner diameter](https://www.mcmaster.com/u-bolts/u-bolts-with-mounting-plates/))
-  * 1/4"-20 nuts, washers, and bolts **1 inch?**
 
 ![Mounting plate perspective view in Easel](Documentation/images/EaselSymbiontMount.png)
 
 ***Mounting plate perspective view in [Easel](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)*** *for easy integration with the X-carve series of lower cost CNC routers.*
 
 ### Assembly
+
+These assembly instructions assume that you have already fabricated [the mounting plate](CNC) (see also the [Easel online CNC setup](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)).
 
 1. Drill and tap 20 mm holes in the side of the box. Use a M20-1.5 tap for the threads
 
@@ -294,13 +300,13 @@ This is what we used for our build; you can be creative based on materials and a
 12. Place the box on a measured flat surface and tap the magnet to the marked location by the Hall Effect sensor. This will appropriately zero the offsets for the sensor and increase its near-horizontal accuracy significantly. For a convenient magnet holder, you can use our [3D-printable magnetic wand][3Dprint], which holds a small rare-Earth magnet.
 This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](https://www.apexmagnets.com/magnets/3-8-x-1-8-disc-neodymium-magnet) works well in our experience.
 
-13. Use the bolts to attach the LiDAR Lite box to [the mounting plate](CNC) (see also the [Easel online CNC setup](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)).
+13. Use the 1/4"-20 hardware to attach the LiDAR Lite box to the mounting plate. The bolts pass through the center holes on the tabs on either side of the box, with their heads towards the box lids.
 
 ![Side view: long axis](Documentation/images/SideView_LongAxis.png)
 
 ![Side view: short axis, LiDAR Lite cable](Documentation/images/SideView_LiDARcableSide.png)
 
-14. (Can wait for field installation) attach the unit via its mounting plate to the appropriate pipe, post, etc.
+14. (Can wait for field installation) attach the unit via its mounting plate to the appropriate pipe, post, etc. This typically involves the U bolts, noted above. Curved EMT conduit can be helpful for providing a way to select the angle of the sensor. Although we use a single 45-degree bend piece of conduit in the images below, we would suggest attaching a 90-degree bend conduit first, and then a 45-degree bend as necessary to adjust the sensor away from a direct down-looking view; the sensor will attach directly to the convex side of the bend instead of bridging over airspace, which required us to use rocks as shims to reduce mounting-plate flexure.
 
 ![Field installation prototype in the lab: Sensor only](Documentation/images/FieldInstallation_LabPrototype_SensorOnly_orig2019-09-09_20200501.jpg)
 
@@ -308,13 +314,16 @@ This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](http
 
 ![Field installation prototype in the lab](Documentation/images/FieldInstallation_LabPrototype_orig2019-09-09_20200501.jpg)
 
-***Lab mock-up of field installation for LiDAR Lite.*** The boxes at right contain [Northern Widget Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) data loggers with a single cable gland to connect to the Symbiont box. The two posts next to them provide examples of how to connect the 3/4" EMT conduit to some fixed point in the environment, either the side of a flat(ish) wall (right) -- though the brackets aren't necessary or even always good, since we can bolt right through the pipe -- or to a flat(ish) surface using a floor flange. We drilled holes through the conduit to attach 1/4" eye bolts (1/4"-20, 1.5" long) using nuts, lock washers, and washers, to the conduit. These eye bolts then held turnbuckles to which we attached cables (lower left). The other end of the cables can be attached via sleeve or wedge anchors to rock, or to other sturdy structures. The LiDAR Lite + Symbiont is in the upper left corner, albeit attached in a way that would have it looking up... unless it were attached to the end of the 90-degree bend.
+***Lab mock-up of field installation for LiDAR Lite.*** *The boxes at right contain [Northern Widget Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) data loggers with a single cable gland to connect to the Symbiont box. The two posts next to them provide examples of how to connect the 3/4" EMT conduit to some fixed point in the environment, either the side of a flat(ish) wall (right) -- though the brackets aren't necessary or even always good, since we can bolt right through the pipe -- or to a flat(ish) surface using a floor flange. We drilled holes through the conduit to attach 1/4" eye bolts (1/4"-20, 1.5" long) using nuts, lock washers, and washers, to the conduit. These eye bolts then held turnbuckles to which we attached cables (lower left). The other end of the cables can be attached via sleeve or wedge anchors to rock, or to other sturdy structures. The LiDAR Lite + Symbiont is in the upper left corner, albeit attached in a way that would have it looking up... unless it were attached to the end of the 90-degree bend.*
 
 ### Mast construction
 
 #### Supplies
 
 * 3/4" EMT rigid conduit
+  * Straight: main mast
+  * 90-degree bend
+  * 45-degree bend
 * 3/4" Conduit screw-down connectors (to join multiple pieces of conduit)
 * 3/4" Conduit-to-threaded connectors (to link smooth conduit to threaded 3/4" plumbing, needed only if you use a floor flange)
 * Floor flange (1, if you want to attach to a flat surface)
@@ -327,7 +336,7 @@ This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](http
 * 3/8" x 2.5+" long sleeve or wedge anchors for the cables; these are less breakable than their 1/4" cousins, but you might still want an extra one.
 * Extra 1/4"-20 hardware. I almost always end up needing this.
 
-You might not need the guy wires and associated hardware if you bolt your assembly to the side of something (like a rock or wall).
+You might not need the guy wires and associated hardware if you bolt your assembly to the side of something (like a rock or wall). Some guy wires are generally encouraged.
 
 #### Assembly
 
