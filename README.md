@@ -51,8 +51,6 @@ Paul, J. D., Buytaert, W., & Sah, N.(2020). A technical evaluation of lidar-base
 * [Software ](https://github.com/NorthernWidget-Skunkworks/Symbiont-LiDAR_Library) to use the Symbiont-LiDAR with Arduino-compatible devices
 * Open-source licensing via GNU GPL 3.0
 
->> @bschulz1701: Finalize a firmware version?
-
 ## Assembly
 
 Assembling this sensor is possible by hand with sufficient skill and the following tools:
