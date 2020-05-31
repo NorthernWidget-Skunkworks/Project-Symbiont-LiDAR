@@ -305,7 +305,7 @@ This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](http
 
 ![Side view: short axis, LiDAR Lite cable](Documentation/images/SideView_LiDARcableSide.png)
 
-14. (Can wait for field installation) attach the unit via its mounting plate to the appropriate pipe, post, etc. This typically involves the U bolts, noted above. Curved EMT conduit can be helpful for providing a way to select the angle of the sensor. Although we use a single 45-degree bend piece of conduit in the images below, we would suggest attaching a 90-degree bend conduit first, and then a 45-degree bend as necessary to adjust the sensor away from a direct down-looking view; the sensor will attach directly to the convex side of the bend instead of bridging over airspace, which required us to use rocks as shims to reduce mounting-plate flexure.
+14. (Can wait for field installation) attach the unit via its mounting plate to the appropriate pipe, post, etc. This typically involves the U bolts, noted above. Curved EMT conduit can be helpful for providing a way to select the angle of the sensor. Although we use a single 45-degree bend piece of conduit in the images below, we might suggest attaching a 90-degree bend conduit first, and then a 45-degree bend as necessary to adjust the sensor away from a direct down-looking view; the sensor will attach directly to the convex side of the bend instead of bridging over airspace, which required us to use rocks as shims to reduce mounting-plate flexure. (This suggestion, however, increases torque on the mast; future field testing is needed to determine the best method.)
 
 ![Field installation prototype in the lab: Sensor only](Documentation/images/FieldInstallation_LabPrototype_SensorOnly_orig2019-09-09_20200501.jpg)
 
@@ -334,6 +334,10 @@ This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](http
 * 1/8" metal cable turns (x6; if you lose one, don't worry; these are nice for durability but not totally necessary)
 * 3/8" x 2.5+" long sleeve or wedge anchors for the cables; these are less breakable than their 1/4" cousins, but you might still want an extra one.
 * Extra 1/4"-20 hardware. I almost always end up needing this.
+* Cable management (keep secure and prevent from flapping in the wind, which can cause damage)
+  * Cable ties (zip ties). Ensure that these are UV-resistant; many black ones are.
+  * Electrical tape
+* *Optional:* 2x ~1-3/4" hose clamps if mounting a data-logger box for the [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) on the main mast. Longer hose clamps (or multiple 1-3/4" clamps in series) for larger logger boxes, so long as they can remain stable on the mast.
 
 You might not need the guy wires and associated hardware if you bolt your assembly to the side of something (like a rock or wall). Some guy wires are generally encouraged.
 
@@ -346,19 +350,19 @@ You might not need the guy wires and associated hardware if you bolt your assemb
 ***Installing the base using wedge anchors.***
 
 ![Conduit installed and anchored with eye bolts and turbuckles.](Documentation/images/Conduit_Standing_EyeBolts_2019-09-14_13.39.42.jpg)
-***Installing the conduit and anchoring it with eye bolts and turnbuckles.*** Before going out to the field, we strongly suggest you pre-drill the holes and pre-install the eye bolts.
+***Installing the conduit and anchoring it with eye bolts and turnbuckles.*** *Before going out to the field, we strongly suggest you pre-drill the holes and pre-install the eye bolts.*
 
 ![Cable to rock bolt](Documentation/images/CableTurnaround_RockBolt_2019-09-14_15.28.48.jpg)
 ***Tightening the cable around the bolt in the rock using the cable clamp.***
 
 ![Aiming the LiDAR Lite](Documentation/images/AimToRiver_Billy_2019-09-14_14.39.31.jpg)
-***Aiming the LiDAR Lite unit at the river.*** In future models, we are considering adding peep sights to the mounting bracket. [Professor Billy Armstrong](https://earth.appstate.edu/faculty-staff/dr-william-h-armstrong) in the photo.
+***Aiming the LiDAR Lite unit at the river.*** *In future models, we are considering adding peep sights to the mounting bracket. [Professor Billy Armstrong](https://earth.appstate.edu/faculty-staff/dr-william-h-armstrong) in the photo.*
 
 ![Perspective view upvalley](Documentation/images/Perspective_upvalley_2019-09-14_15.20.41.jpg)
 ***Fully installed clifftop unit***
 
 ![Perspective view after installation.](Documentation/images/Perspective_view_installed_2019-09-14_15.30.02.jpg)
-***Fully installed clifftop unit*** *Note additional assembly item if you use this method: ~1-3/4" hose clamps to attach data-logger box to post.*
+***Fully installed clifftop unit*** *Note data-logger box attached with cable ties, as well as the mounting-plate attachment. For the latter, we used a rock as a shim with a 45-degree piece of EMS conduit. However, it may have been better to use a 90-degree piece of conduit and a 45-degree piece of conduit together to keep us from needing this shim -- though this would have increased torque on the main mast.*
 
 ![](Documentation/images/RockSideDrill_Billy_2019-09-15_14.14.45.jpg)
 ***Alternative method: installing on the side of a rock.***
