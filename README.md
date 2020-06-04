@@ -107,7 +107,7 @@ This code is intended for any generic Arduino system.
 
 ```c++
 // Include the Symbiont library
-#include "SymbiontLiDAR"
+#include "SymbiontLiDAR.h"
 
 // Declare variables -- just as strings
 String header;
@@ -164,20 +164,20 @@ uint32_t updateRate = 60;
 void setup(){
     Header = Header + myLaser.GetHeader();
     Logger.begin(I2CVals, sizeof(I2CVals), Header);
-    init();
+    initialize();
 }
 
 void loop(){
-    init();
+    initialize();
     Logger.Run(update, updateRate);
 }
 
 String update() {
-    init()
+    initialize();
     return myLaser.GetString();
 }
 
-void init(){
+void initialize(){
     myLaser.begin();
 }
 ```
@@ -197,7 +197,7 @@ String data;
 
 // Instantiate classes
 SymbiontLiDAR myLaser;
-Resnik Logger();
+Resnik Logger;
 
 // Empty header to start; will include sensor labels and information
 String Header = "";
@@ -211,20 +211,20 @@ uint32_t updateRate = 60;
 void setup(){
     Header = Header + myLaser.GetHeader();
     Logger.begin(I2CVals, sizeof(I2CVals), Header);
-    init();
+    initialize();
 }
 
 void loop(){
-    init();
+    initialize();
     Logger.Run(update, updateRate);
 }
 
 String update() {
-    init()
+    initialize();
     return myLaser.GetString();
 }
 
-void init(){
+void initialize(){
     myLaser.begin();
 }
 ```
