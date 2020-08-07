@@ -1,8 +1,8 @@
 #include <Margay.h>
 
 String Header = ""; //Information header
-uint8_t I2CVals[1] = {0x40}; 
-unsigned long UpdateRate = 300; //Number of seconds between readings 
+uint8_t I2CVals[1] = {0x50};
+unsigned long UpdateRate = 300; //Number of seconds between readings
 
 Margay Logger(Model_2v0);
 
@@ -25,10 +25,10 @@ String Update()
 	return ReadI2CData();
 }
 
-void Init() 
+void Init()
 {
-	Wire.begin(); 
-	Wire.beginTransmission(0x40);
+	Wire.begin();
+	Wire.beginTransmission(0x50);
 	Wire.write(0x01);
 	Wire.write(0x00); //Set for high sensitivity
 	Wire.endTransmission();
@@ -42,8 +42,8 @@ String ReadI2CData()
 
 	uint8_t Data1 = 0;
 	uint8_t Data2 = 0;
-	uint8_t ADR = 0x40; //FIX! Make global const! 
-	
+	uint8_t ADR = 0x50; //FIX! Make global const!
+
 	int16_t DataSet[7] = {0}; //Used to store set of data read in from I2C
 
 	for(int i = 0; i < 7; i++) {
@@ -88,14 +88,14 @@ String ReadI2CData()
 		Pitch = atan(-ValX/ValZ)*(180.0/3.14) - (atan(-OffsetX/OffsetZ)*(180.0/3.14));
 		Roll = atan(ValY/(sqrt(pow(ValX, 2) + pow(ValZ, 2))))*(180.0/3.14) - (atan(OffsetY/(sqrt(pow(OffsetX, 2) + pow(OffsetZ, 2))))*(180.0/3.14));
 	}
-	
+
 	if(DataSet[0] < 0) DataSet[0] = -9999; //Check for invalid range
 	if(DataSet[1] == DataSet[2] && DataSet[1] == DataSet[3] && DataSet[1] == -1) {  //If all values are -1 set pitch and roll out of range
 		Pitch = -9999;
 		Roll = -9999;
 	}
 
-	
-	// return String(DataSet[0]) + "," + String(DataSet[1]) + "," + String(DataSet[2]) + "," + String(DataSet[3]) + ","; 
+
+	// return String(DataSet[0]) + "," + String(DataSet[1]) + "," + String(DataSet[2]) + "," + String(DataSet[3]) + ",";
 	return String(DataSet[0]) + "," + String(Pitch) + "," + String(Roll) + ",";
 }

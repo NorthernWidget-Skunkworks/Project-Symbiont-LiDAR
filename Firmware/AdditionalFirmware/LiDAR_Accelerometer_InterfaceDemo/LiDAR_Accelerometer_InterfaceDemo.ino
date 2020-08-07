@@ -20,12 +20,12 @@ const int ACCEL_ADR = 0x18; //DEBUG!
 #define READ 0x01
 #define WRITE 0x00
 
-#define BUF_LENGTH 64 //Length of I2C Buffer, verify with documentation 
+#define BUF_LENGTH 64 //Length of I2C Buffer, verify with documentation
 
 // #define ADR_ALT 0x41 //Alternative device address
 
 
-volatile uint8_t ADR = 0x40; //Use arbitraty address, change using generall call??
+volatile uint8_t ADR = 0x50; //Use arbitraty address, change using generall call??
 // const uint8_t ADR_Alt = 0x41; //Alternative device address  //WARNING! When a #define is used instead, problems are caused
 
 unsigned int Config = 0; //Global config value
@@ -36,7 +36,7 @@ const unsigned int UpdateRate = 5; //Rate of update
 
 SlowSoftI2CMaster si = SlowSoftI2CMaster(PIN_A2, PIN_A3, true);  //Initialize software I2C
 
-volatile bool StopFlag = false; //Used to indicate a stop condition 
+volatile bool StopFlag = false; //Used to indicate a stop condition
 volatile uint8_t RegID = 0; //Used to denote which register will be read from
 volatile bool RepeatedStart = false; //Used to show if the start was repeated or not
 
@@ -57,7 +57,7 @@ void setup() {
 
 	pinMode(POWER_SW, OUTPUT);
 	digitalWrite(POWER_SW, LOW); //Turn on output power //FIX??
-	pinMode(7, INPUT); //DEBUG! 
+	pinMode(7, INPUT); //DEBUG!
   si.i2c_init(); //Begin I2C master
   InitAccel();
 
@@ -73,15 +73,15 @@ void loop() {
 	// 	SplitAndLoad(0x0D, GetWhite()); //Load white value
 	// 	SplitAndLoad(0x02, long(GetUV(0))); //Load UVA
 	// 	SplitAndLoad(0x07, long(GetUV(1))); //Load UVB
-	// 	SplitAndLoad(0x10, GetLuxGain()); //Load lux multiplier 
+	// 	SplitAndLoad(0x10, GetLuxGain()); //Load lux multiplier
 	// 	SplitAndLoad(0x13, GetADC(0));
 	// 	SplitAndLoad(0x15, GetADC(1));
 	// 	SplitAndLoad(0x17, GetADC(2));
 
-	// 	StartSample = false; //Clear flag when new values updated  
+	// 	StartSample = false; //Clear flag when new values updated
 	// }
 	// if(Count++ == UpdateRate) {  //Fix update method??
-	// 	StartSample = true; //Set flag if number of updates have rolled over 
+	// 	StartSample = true; //Set flag if number of updates have rolled over
 	// 	Count = 0;
 	// }
 
@@ -95,7 +95,7 @@ void loop() {
 	// while(digitalRead(7), LOW); //Wait for updated values //DEBUG!
 	// ReadByte(ACCEL_ADR, 0x27);
 	// ReadWord(ACCEL_ADR, OUT_X_ADR);
-	uint8_t Stat1 = ReadByte(ACCEL_ADR, 0x27); 
+	uint8_t Stat1 = ReadByte(ACCEL_ADR, 0x27);
 	uint8_t Stat2 = ReadByte(ACCEL_ADR, 0x07);
 	// while(((Stat1 & 0x08) >> 3) != 1 || ((Stat2 & 0x08) >> 3) != 1 || ((Stat2 & 0x80) >> 7) != 1) {
 	while(((Stat1 & 0x08) >> 3) != 1 || Stat2 != 0xFF) {
@@ -106,13 +106,13 @@ void loop() {
 
 	// Serial.println("START"); //DEBUG!
 	GetG();
-	Serial.println(Stat1, BIN); //DEBUG!	
+	Serial.println(Stat1, BIN); //DEBUG!
 	Serial.println(Stat2, BIN); //DEBUG!
 	Serial.print("\n\n"); //Newline return
 	// for(int i = 0; i < 3; i++) {
 	// 	Serial.println(GetG(i));
 	// }
-	// Serial.println(ReadByte(ACCEL_ADR, 0x27), BIN); //DEBUG!	
+	// Serial.println(ReadByte(ACCEL_ADR, 0x27), BIN); //DEBUG!
 	delay(1000);
 }
 
@@ -124,7 +124,7 @@ void loop() {
 //   float Val = 0;
 //   switch(Axis) {
 //     case(0):
-//       Val = asin(ValX); 
+//       Val = asin(ValX);
 //       break;
 //     case(1):
 //       Val = asin(ValY);
@@ -140,10 +140,10 @@ void loop() {
 //       break;
 //   }
 //   if(ValX == ValY && ValX == ValZ) Val = -9999; //Return error value is all vals are the same (1 in 6.87x10^10 likelyhood of occouring without error)
-//   return Val; 
+//   return Val;
 // }
 
-uint8_t InitAccel() 
+uint8_t InitAccel()
 {
 	// WriteByte(ACCEL_ADR, CTRL_REG1_ADR, 0x07);
 	WriteByte(ACCEL_ADR, CTRL_REG1_ADR, 0x77); //Set for 100Hz output data rate //FIX! Set to low power initally??
@@ -153,13 +153,13 @@ uint8_t InitAccel()
 }
 
 float GetG()
-{ 
+{
 	// uint8_t AxisADR = OUT_X_ADR + 2*Axis; //Add appropriate offset
 	// int16_t Data = ReadWord(ACCEL_ADR, AxisADR);
-	// return Data*(4.0/4096.0); //FIX! Make fixed integer! 
-	// Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions 
+	// return Data*(4.0/4096.0); //FIX! Make fixed integer!
+	// Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions
 	bool Error = SendCommand(ACCEL_ADR, OUT_X_ADR | 0x80);
-	si.i2c_stop(); 
+	si.i2c_stop();
 
 	uint8_t Data[6] = {0}; //Init data
 	si.i2c_start((ACCEL_ADR << 1) | READ);
@@ -193,7 +193,7 @@ uint8_t WriteWord(uint8_t Adr, uint8_t Command, unsigned int Data)  //Writes val
 
 uint8_t WriteByte(uint8_t Adr, uint8_t Command, uint8_t Data)  //Writes value to 16 bit register
 {
-	Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions 
+	Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions
 	si.i2c_start((Adr << 1) | WRITE);
 	si.i2c_write(Command); //Write Command value
 	uint8_t Error = si.i2c_write((Data) & 0xFF); //Write MSB
@@ -218,7 +218,7 @@ uint8_t WriteWord_LE(uint8_t Adr, uint8_t Command, unsigned int Data)  //Writes 
 // 	uint8_t Error = si.i2c_write(NewConfig);
 // 	si.i2c_stop();
 // 	if(Error == true) {
-// 		Config = NewConfig; //Set global config if write was sucessful 
+// 		Config = NewConfig; //Set global config if write was sucessful
 // 		return 0;
 // 	}
 // 	else return -1; //If write failed, return failure condition
@@ -242,7 +242,7 @@ int ReadByte(uint8_t Adr, uint8_t Command, uint8_t Pos) //Send command value, an
 
 int ReadByte(uint8_t Adr, uint8_t Command) //Send command value, and high/low byte to read, returns desired byte
 {
-	Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions 
+	Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions
 	bool Error = SendCommand(Adr, Command);
 	si.i2c_stop(); //DEBUG!
 	si.i2c_start((Adr << 1) | READ);
@@ -261,9 +261,9 @@ int ReadByte(uint8_t Adr, uint8_t Command) //Send command value, and high/low by
 
 int16_t ReadWord(uint8_t Adr, uint8_t Command)  //Send command value, returns entire 16 bit word
 {
-	Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions 
+	Command |= 0x80; //turn on auto increment //FIX!!! Remove for other I2C transactions
 	bool Error = SendCommand(Adr, Command);
-	si.i2c_stop(); 
+	si.i2c_stop();
 	// Serial.print("Error = "); Serial.println(Error); //DEBUG!
 	// uint8_t Data[6] = {0}; //Init data
 	si.i2c_start((Adr << 1) | READ);
@@ -273,7 +273,7 @@ int16_t ReadWord(uint8_t Adr, uint8_t Command)  //Send command value, returns en
 	si.i2c_stop();
 	// if(Error == true) return ((ByteHigh << 8) | ByteLow); //If read succeeded, return concatonated value
 	// else return -1; //Return error if read failed
-	return ((int16_t)(ByteHigh << 8) | (int16_t)ByteLow) >> 4; //DEBUG!  //FIX! Right shift?? 
+	return ((int16_t)(ByteHigh << 8) | (int16_t)ByteLow) >> 4; //DEBUG!  //FIX! Right shift??
 }
 
 int ReadWord_LE(uint8_t Adr, uint8_t Command)  //Send command value, returns entire 16 bit word
@@ -312,8 +312,8 @@ boolean addressEvent(uint16_t address, uint8_t count)
 }
 
 void requestEvent()
-{	
-	//Allow for repeated start condition 
+{
+	//Allow for repeated start condition
 	if(RepeatedStart) {
 		for(int i = 0; i < 2; i++) {
 			Wire.write(Reg[RegID + i]);
@@ -324,11 +324,11 @@ void requestEvent()
 	}
 }
 
-void receiveEvent(int DataLen) 
+void receiveEvent(int DataLen)
 {
     //Write data to appropriate location
     if(DataLen == 2){
-	    //Remove while loop?? 
+	    //Remove while loop??
 	    while(Wire.available() < 2); //Only option for writing would be register address, and single 8 bit value
 	    uint8_t Pos = Wire.read();
 	    uint8_t Val = Wire.read();
@@ -341,9 +341,8 @@ void receiveEvent(int DataLen)
 	}
 }
 
-void stopEvent() 
+void stopEvent()
 {
 	StopFlag = true;
 	//End comunication
 }
-
