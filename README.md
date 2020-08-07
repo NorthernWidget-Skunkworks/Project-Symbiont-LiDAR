@@ -156,7 +156,7 @@ Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
 String Header = "";
 
 // I2CVals for Symbiont
-uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH HAAR
+uint8_t I2CVals[] = {0x50}; // DEFAULT
 
 //Number of seconds between readings
 uint32_t updateRate = 60;
@@ -203,7 +203,7 @@ Resnik Logger;
 String Header = "";
 
 // I2CVals for Symbiont
-uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH HAAR
+uint8_t I2CVals[] = {0x50}; // DEFAULT
 
 //Number of seconds between readings
 uint32_t updateRate = 60;
