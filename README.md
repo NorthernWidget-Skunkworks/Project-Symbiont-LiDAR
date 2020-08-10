@@ -35,7 +35,7 @@ Paul, J. D., Buytaert, W., & Sah, N.(2020). A technical evaluation of lidar-base
     * Digital communications
       * I2C
 * Power
-  * Voltage limits: 3.3 ~ 5V
+  * Voltage limits: 3.3 ~ 5.5V
   * Power consumption: ~0.5mA @ 4.5V, take reading every 60 seconds, then power down
   * Power conditioning: Provides an onboard, high power, step up to 5V to allow for interface to 3.3V loggers
 * Fault recovery: Using intermediate system to emulate an I2C connection prevents a global lockup of the logger system
