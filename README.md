@@ -236,6 +236,8 @@ void initialize(){
 
 This is what we used for our build; you can be creative based on materials and availability.
 
+>> @awickert Update 3/8" after PDW tests
+
 * Main enclosure
   * Polycase box [WC-20F (clear lid)](https://www.polycase.com/wc-20f)
   * [2x \#4 screws](https://www.polycase.com/screws-mbr-100) to mount Symbiont in box
@@ -244,7 +246,7 @@ This is what we used for our build; you can be creative based on materials and a
   * Desiccant packs
 * LiDAR Rangefinder and attachment to enclosure
   * [LiDAR Lite sensor](https://www.sparkfun.com/products/14599)
-  * [4 sealing screws](https://www.mcmaster.com/90825A142): \#4-40 x 5/16"
+  * [4 sealing screws](https://www.mcmaster.com/90825A142): \#4-40 x **3/8"(?)**
   * [4 washers](https://www.mcmaster.com/90107A005) for \#4 screws
   * [4 cap nuts](https://www.mcmaster.com/99022A101) for \#4-40 screws
 * Mounting plate
@@ -269,7 +271,9 @@ This is what we used for our build; you can be creative based on materials and a
 
 These assembly instructions assume that you have already fabricated [the mounting plate](CNC) (see also the [Easel online CNC setup](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)).
 
-1. Drill and tap 20 mm holes in the side of the box. Use a M20-1.5 tap for the threads
+>> @awickert: Update after PDW drills+tests
+
+1. Drill and tap **10?** mm holes in the side of the box. Use a **M10?-1.5** tap for the threads
 
 2. Install the sensor as shown below using two of the \#4 self-tapping screws. By mounting the LiDAR Lite at an angle, you can fix it to the box lid in a way that still allows the box to open and close properly.
 
