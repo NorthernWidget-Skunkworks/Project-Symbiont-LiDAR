@@ -273,7 +273,7 @@ These assembly instructions assume that you have already fabricated [the mountin
 
 >> @awickert: Update after PDW drills+tests
 
-1. Drill and tap **10?** mm holes in the side of the box. Use a **M10?-1.5** tap for the threads
+1. Drill and tap 12 mm holes in the side of the box. Use a M12-1.5 tap for the threads.
 
 2. Install the sensor as shown below using two of the \#4 self-tapping screws. By mounting the LiDAR Lite at an angle, you can fix it to the box lid in a way that still allows the box to open and close properly.
 
