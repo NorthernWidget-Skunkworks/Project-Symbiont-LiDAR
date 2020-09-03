@@ -236,8 +236,6 @@ void initialize(){
 
 This is what we used for our build; you can be creative based on materials and availability.
 
->> @awickert Update 3/8" after PDW tests
-
 * Main enclosure
   * Polycase box [WC-20F (clear lid)](https://www.polycase.com/wc-20f)
   * [2x \#4 screws](https://www.polycase.com/screws-mbr-100) to mount Symbiont in box
@@ -246,7 +244,7 @@ This is what we used for our build; you can be creative based on materials and a
   * Desiccant packs
 * LiDAR Rangefinder and attachment to enclosure
   * [LiDAR Lite sensor](https://www.sparkfun.com/products/14599)
-  * [4 sealing screws](https://www.mcmaster.com/90825A142): \#4-40 x **3/8"(?)**
+  * [4 sealing screws](https://www.mcmaster.com/90825A144/): \#4-40 x 3/8"
   * [4 washers](https://www.mcmaster.com/90107A005) for \#4 screws
   * [4 cap nuts](https://www.mcmaster.com/99022A101) for \#4-40 screws
 * Mounting plate
