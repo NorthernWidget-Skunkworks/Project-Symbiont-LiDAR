@@ -169,13 +169,12 @@ void setup(){
 }
 
 void loop(){
-    initialize();
     Logger.Run(update, updateRate);
 }
 
 String update() {
     initialize();
-    return myLaser.GetString();
+    return myLaser.getString();
 }
 
 void initialize(){
@@ -216,13 +215,12 @@ void setup(){
 }
 
 void loop(){
-    initialize();
     Logger.Run(update, updateRate);
 }
 
 String update() {
     initialize();
-    return myLaser.GetString();
+    return myLaser.getString();
 }
 
 void initialize(){
