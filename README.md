@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/196273476.svg)](https://zenodo.org/badge/latestdoi/196273476)
+
 # Project-Symbiont-LiDAR
 Design files for a support and interface unit for the Garmin LiDAR Lite
 
