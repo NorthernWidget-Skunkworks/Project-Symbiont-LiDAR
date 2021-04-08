@@ -293,7 +293,9 @@ These assembly instructions assume that you have already fabricated [the mountin
 
 10. Securely screw the lid onto the box to seal the LiDAR Lite + Symbiont unit.
 
-11. Mark the corner of the box next to the Hall-effect sensor, and mark the orientations of the roll and pitch axes.
+11. Mark the corner of the box next to the Hall-effect sensor, and mark the orientations of the roll and pitch axes. The pitch axis should be positive when the long strain-relieved cable gland tilts upwards. The roll axis should be positive when, when looking at the side of the assembly such that the long strain-relieved cable gland is on the left and the laser rangefinder is pointed up, the laser rangefinder rolls towards you.
+
+>> Add an annotated picture of roll, pitch, and Hall-Effect sensor locations
 
 12. Place the box on a measured flat surface and tap the magnet to the marked location by the Hall Effect sensor. This will appropriately zero the offsets for the sensor and increase its near-horizontal accuracy significantly. This must be done when the sensor is powered; the LED will light up during the full duration of magnetic contact. When connected to a logger, this can be done by putting the magnet in place, hitting the "RESET" button (e.g., on a Margay logger), and then holding the magnet in place with the read light on until the first reading is complete. Doing this while connected to a computer is recommended in order to see the first reading on the serial monitor and double check that the zeroing/calibration is appropriate. For a convenient magnet holder, you can use our [3D-printable magnetic wand][3Dprint], which holds a small rare-Earth magnet. This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](https://www.apexmagnets.com/magnets/3-8-x-1-8-disc-neodymium-magnet) works well in our experience.
 
