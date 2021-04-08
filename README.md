@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/196273476.svg)](https://zenodo.org/badge/latestdoi/196273476)
+
 # Project-Symbiont-LiDAR
 Design files for a support and interface unit for the Garmin LiDAR Lite
 
@@ -265,31 +267,31 @@ This is what we used for our build; you can be creative based on materials and a
 
 ### Assembly
 
-These assembly instructions assume that you have already fabricated [the mounting plate](CNC) (see also the [Easel online CNC setup](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)).
-
->> @awickert: Update after PDW drills+tests
+Prior to assembly, ensure that you have:
+* [Uploaded the firmware to the Symbiont board](#Uploading-the-firmware)
+* Fabricated [the mounting plate](CNC) (see also the [Easel online CNC setup](https://easel.inventables.com/projects/VMmCoOyJyiiKTospk1NBBQ)) if desired.
 
 1. Drill and tap 12 mm holes in the side of the box. Use a M12-1.5 tap for the threads.
 
-2. Install the sensor as shown below using two of the \#4 self-tapping screws. By mounting the LiDAR Lite at an angle, you can fix it to the box lid in a way that still allows the box to open and close properly.
+2. Install the Symbiont board as shown below using two of the \#4 self-tapping screws.
 
 ![Symbiont prototype in box](Documentation/images/PrototypeInBox_top_withScale_20200501.jpg)
 
-3. Using the sealing screws, cap nuts, and washers, install the LiDAR Lite sensor onto the lid. The cap nuts go on the outside of the housing.
+3. Using the sealing screws, cap nuts, and washers, install the LiDAR Lite sensor onto the lid. By mounting the LiDAR Lite at an angle, you can fix it to the box lid in a way that still allows the box to open and close properly. The cap nuts go on the outside of the housing.
 
 ![Prototype sensor assembly](Documentation/images/PrototypeBoxAssembly_orig2019-09-05_20200501.jpg)
 
 4. Thread the cables through the cable glands and attach them to the screw terminals. A 1.8 mm flat-head screwdriver can be very useful for this. Note that these cables cross the board in the above image (upper left) -- and that (unlike in the image!) you should do this *after* the board is in the box.
 
-5. Using the switch in the box, select the desired communications protocol.
+5. Using the switch in the box, select the desired communications protocol. For most of our uses, this is I2C.
 
 6. Attach the cable to the data logger.
 
 7. Test the LiDAR Lite unit.
 
-8. When satisfied with the tests, turn off the data logger and place a protective cover over the lenses of the LiDAR Lite for safety during transport. We have [a set of "safety glasses" available for 3D printing](3Dprint).
+8. When satisfied with the tests, turn off the data logger and place a protective cover over the lenses of the LiDAR Lite for safety during transport. We have [a set of "safety glasses" available for 3D printing](3Dprint). You may want to secure these in place with electrical tape.
 
-9. Place desiccant in the box.
+9. Place desiccant in the box. I typically install two small desiccant packs on the side of the board above the switch and large capacitor and pack them in so they are unlikely to move; this is in order to keep the indicator LED visible.
 
 10. Securely screw the lid onto the box to seal the LiDAR Lite + Symbiont unit.
 
@@ -300,6 +302,8 @@ These assembly instructions assume that you have already fabricated [the mountin
 12. Place the box on a measured flat surface and tap the magnet to the marked location by the Hall Effect sensor. This will appropriately zero the offsets for the sensor and increase its near-horizontal accuracy significantly. This must be done when the sensor is powered; the LED will light up during the full duration of magnetic contact. When connected to a logger, this can be done by putting the magnet in place, hitting the "RESET" button (e.g., on a Margay logger), and then holding the magnet in place with the read light on until the first reading is complete. Doing this while connected to a computer is recommended in order to see the first reading on the serial monitor and double check that the zeroing/calibration is appropriate. For a convenient magnet holder, you can use our [3D-printable magnetic wand][3Dprint], which holds a small rare-Earth magnet. This may be a generic part, though this [3/8" x 1/8" Neodymium Disk Magnet](https://www.apexmagnets.com/magnets/3-8-x-1-8-disc-neodymium-magnet) works well in our experience.
 
 13. Use the 1/4"-20 hardware to attach the LiDAR Lite box to the mounting plate. The bolts pass through the center holes on the tabs on either side of the box, with their heads towards the box lids.
+
+>> Note: Mounting plate holes currently too small for these; will need to be updated. Currently using #8 hardware.
 
 ![Side view: long axis](Documentation/images/SideView_LongAxis.png)
 
