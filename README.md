@@ -362,6 +362,8 @@ You might not need the guy wires and associated hardware if you bolt your assemb
 ![Aiming the LiDAR Lite](Documentation/images/AimToRiver_Billy_2019-09-14_14.39.31.jpg)
 ***Aiming the LiDAR Lite unit at the river.*** *In future models, we are considering adding peep sights to the mounting bracket. [Professor Billy Armstrong](https://earth.appstate.edu/faculty-staff/dr-william-h-armstrong) in the photo.*
 
+The quality of any zeroing with the Hall-effect sensor will be limited by the ~1-degree precision of the accelerometer that is used as an inclinometer; as an additional check, it is recommended to measure and record the orientation of the field-mounted unit by hand.
+
 ![Perspective view upvalley](Documentation/images/Perspective_upvalley_2019-09-14_15.20.41.jpg)
 ***Fully installed clifftop unit***
 
