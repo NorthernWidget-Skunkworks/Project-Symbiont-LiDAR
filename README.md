@@ -42,7 +42,7 @@ Paul, J. D., Buytaert, W., & Sah, N.(2020). A technical evaluation of lidar-base
 * Status LED
 * Open-source licensing via CC BY-SA 4.0
 
-![Symbiont board](Documentation/images/SymbiontLiDAR_v010_top_annotated_20200501.png)
+![Symbiont board](Documentation/images/SymbiontLiDAR_v010_top_annotated_20210408.png)
 
 ### Electronic Software and Firmware
 
