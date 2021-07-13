@@ -259,7 +259,7 @@ This is what we used for our build; you can be creative based on materials and a
     * Lock washers: We typically use [split-lock washers](https://www.mcmaster.com/zinc-plated-steel-washers/), but [tooth-lock washers](https://www.mcmaster.com/91113A029) are good for high-vibration environments.
   * 2 U bolts: 1/4"-20, inner diameter 3/4" to 1 3/4", to attach the mounting plate to a pipe. We typically mount this sensor on 3/4" pipe or conduit, and recommend a U bolt designed to fit this ([1/4"-20, 1 1/8" inner diameter](https://www.mcmaster.com/u-bolts/u-bolts-with-mounting-plates/for-pipe-size~3-4/)). Weather/corrosion resistance is helpful, especially if you are concerned about later removing the U bolts.
 * Cable to logger
-  * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability.
+  * 3 m (or less) [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), stripped and tinned at both ends. Other cables will work too; this is what we have found to be highest quality and reliability. We cannot guarantee successful I<sup>2</sup>C communications over cables longer than 3 meters.
 
 ![Mounting plate perspective view in Easel](Documentation/images/EaselSymbiontMount.png)
 
