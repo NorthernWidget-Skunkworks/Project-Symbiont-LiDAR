@@ -83,7 +83,7 @@ Many devices exist to upload firmware, including:
 
 ### Uploading the firmware
 
-Using this ISP, upload (as of the time of writing): [the Arduino sketch in this folder](Firmware/LiDAR_InterfaceDemo/). To do so, follow these steps:
+Using this ISP, upload (as of the time of writing): [the Arduino sketch in this folder](Firmware/AdditionalFirmware/LiDAR_Accelerometer_InterfaceDemo). To do so, follow these steps:
 
 1. Open the Arduino IDE.
 2. Follow [these instructions](https://github.com/SpenceKonde/ATTinyCore/blob/master/Installation.md) to install the [ATTinyCore board definitions](https://github.com/SpenceKonde/ATTinyCore)
