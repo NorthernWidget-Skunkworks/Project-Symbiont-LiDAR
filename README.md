@@ -153,7 +153,7 @@ String data;
 
 // Instantiate classes
 SymbiontLiDAR myLaser;
-Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
+Margay Logger; // Margay v2.2; UPDATE CODE TO INDICATE THIS
 
 // Empty header to start; will include sensor labels and information
 String Header = "";
@@ -171,7 +171,7 @@ void setup(){
 }
 
 void loop(){
-    Logger.Run(update, updateRate);
+    Logger.run(update, updateRate);
 }
 
 String update() {
@@ -217,7 +217,7 @@ void setup(){
 }
 
 void loop(){
-    Logger.Run(update, updateRate);
+    Logger.run(update, updateRate);
 }
 
 String update() {
