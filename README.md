@@ -99,6 +99,8 @@ Using this ISP, upload (as of the time of writing): [the Arduino sketch in this 
 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
+***Note: be sure to download and/or update drivers for your ISP***
+
 
 ## Writing a program to connect to the Symbiont-LiDAR
 
