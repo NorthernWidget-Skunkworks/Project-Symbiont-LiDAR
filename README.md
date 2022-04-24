@@ -150,15 +150,13 @@ The [Margay data logger](github.com/NorthernWidget-Skunkworks/Project-Margay) is
 #include "SymbiontLiDAR.h"
 
 // Declare variables -- just as strings
-String header;
+// Empty header to start; will include sensor labels and information
+String header = "";
 String data;
 
 // Instantiate classes
 SymbiontLiDAR myLaser;
 Margay Logger; // Margay v2.2; UPDATE CODE TO INDICATE THIS
-
-// Empty header to start; will include sensor labels and information
-String Header = "";
 
 // I2CVals for Symbiont
 uint8_t I2CVals[] = {0x50}; // DEFAULT
@@ -167,8 +165,8 @@ uint8_t I2CVals[] = {0x50}; // DEFAULT
 uint32_t updateRate = 60;
 
 void setup(){
-    Header = Header + myLaser.GetHeader();
-    Logger.begin(I2CVals, sizeof(I2CVals), Header);
+    header = header + myLaser.getHeader();
+    Logger.begin(I2CVals, sizeof(I2CVals), header);
     initialize();
 }
 
@@ -196,6 +194,7 @@ void initialize(){
 #include "SymbiontLiDAR.h"
 
 // Declare variables -- just as strings
+// Empty header to start; will include sensor labels and information
 String header;
 String data;
 
@@ -203,8 +202,6 @@ String data;
 SymbiontLiDAR myLaser;
 Resnik Logger;
 
-// Empty header to start; will include sensor labels and information
-String Header = "";
 
 // I2CVals for Symbiont
 uint8_t I2CVals[] = {0x50}; // DEFAULT
@@ -213,8 +210,8 @@ uint8_t I2CVals[] = {0x50}; // DEFAULT
 uint32_t updateRate = 60;
 
 void setup(){
-    Header = Header + myLaser.GetHeader();
-    Logger.begin(I2CVals, sizeof(I2CVals), Header);
+    header = header + myLaser.getHeader();
+    Logger.begin(I2CVals, sizeof(I2CVals), header);
     initialize();
 }
 
