@@ -55,6 +55,8 @@ Paul, J. D., Buytaert, W., & Sah, N.(2020). A technical evaluation of lidar-base
 
 ## Assembly
 
+![Rendered image of assembled LiDAR unit](Documentation/images/Render.png)
+
 Assembling this sensor is possible by hand with sufficient skill and the following tools:
 * Temperature-controlled soldering iron
 * Hot-air rework station
